@@ -93,7 +93,7 @@ const Website = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const scroll = (direction) => {
+  const scroll = (direction: 'left' | 'right') => {
     const container = scrollContainerRef.current;
     if (container) {
       const itemWidth = container.offsetWidth / 3;
@@ -240,6 +240,8 @@ const Website = () => {
           </motion.div>
         </div>
       </section>
+
+      
       {/* Skills Section */}
       <section id="services" className="min-h-screen flex items-center bg-neutral-50 py-24">
         <div className="max-w-7xl mx-auto px-12">
