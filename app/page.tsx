@@ -30,32 +30,32 @@ const Website = () => {
 
   const supportItems = [
     {
-      number: "01",
+      number: "1",
       title: "Стремлюсь к идеальности, которая сопровождается постоянным стрессом",
       image: "/images/2.png"
     },
     {
-      number: "02", 
+      number: "2", 
       title: "Не хочу соответствовать ожиданиям других людей, хочу быть настоящим",
       image: "/images/1.png"
     },
     {
-      number: "06",
+      number: "3",
       title: "Споры с близкими людьми, которые разрушают наши отношения",
       image: "/images/6.png"
     },
     {
-      number: "04",
+      number: "4",
       title: "Сложности в принятии важных решений и страх перед будущим",
       image: "/images/3.png"
     },
     {
-      number: "05",
+      number: "5",
       title: "Потеря мотивации и интереса к любимому делу",
       image: "/images/4.png"
     },
     {
-      number: "03",
+      number: "6",
       title: "Чувство одиночества и сложности в построении отношений",
       image: "/images/5.png"
     }
@@ -246,7 +246,7 @@ const Website = () => {
       <section id="services" className="min-h-screen flex items-center bg-neutral-50 py-24">
         <div className="max-w-7xl mx-auto px-12">
           <div className="text-center mb-24">
-            <p className="text-neutral-400 text-sm mb-4 tracking-wide">(результат)</p>
+            <p className="text-neutral-400 text-sm mb-4 tracking-wide"></p>
             <h2 className="text-5xl font-light text-neutral-800 mb-2">
               Ценные навыки, которые
             </h2>
@@ -308,7 +308,7 @@ const Website = () => {
       <section id="requests" className="min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24">
         <div className="max-w-7xl mx-auto px-12">
           <div className="mb-24">
-            <p className="text-neutral-400 text-sm mb-4 tracking-wide">(запросы в работе)</p>
+            <p className="text-neutral-400 text-sm mb-4 tracking-wide"></p>
             <div className="flex items-baseline gap-4">
               <h2 className="text-amber-700/90 text-5xl font-light italic">
                 Поддержу
@@ -372,33 +372,18 @@ const Website = () => {
               </button>
             </div>
           </div>
-
-          <div className="bg-neutral-50 dark:bg-neutral-800 rounded-lg p-12 mt-12 text-center">
-            <h3 className="text-xl text-neutral-800 dark:text-white mb-4">
-              Не знаете как сформулировать?
-            </h3>
-            <p className="text-neutral-600 dark:text-neutral-400 mb-6">
-              Пройдите бесплатную онлайн диагностику
-            </p>
-            <button className="px-8 py-4 bg-amber-700/90 text-white rounded-full text-sm tracking-wide hover:bg-amber-800 transition-colors">
-              ПРОЙТИ ДИАГНОСТИКУ
-            </button>
-          </div>
-        </div>
-      </section>
-
 {/* About Section */}
 <section id="about" className="min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24">
   <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
     <div>
-      <p className="text-neutral-400 text-sm mb-8">(обо мне)</p>
+      <p className="text-neutral-400 text-sm mb-8"></p>
       <div className="mb-12">
         <h2 className="text-neutral-800 dark:text-white text-5xl mb-2">Меня</h2>
         <h2 className="text-amber-700 text-5xl italic mb-2">зовут</h2>
         <h2 className="text-neutral-800 dark:text-white text-5xl">Андрей Малик</h2>
       </div>
       <div className="grid gap-12">
-        <motion.div 
+        <motion.div
           whileHover={{ x: 10 }}
           className="group"
         >
@@ -407,7 +392,7 @@ const Website = () => {
             Психолог-студент, Эмоционально-Образный терапевт, КПТ терапевт
           </p>
         </motion.div>
-        <motion.div 
+        <motion.div
           whileHover={{ x: 10 }}
           className="group"
         >
@@ -416,7 +401,7 @@ const Website = () => {
             Обучалаюсь в МИП и в Институте ЭОТ
           </p>
         </motion.div>
-        <motion.div 
+        <motion.div
           whileHover={{ x: 10 }}
           className="group"
         >
@@ -425,7 +410,7 @@ const Website = () => {
             Регулярно прохожу супервизию и личную терапию
           </p>
         </motion.div>
-        <motion.div 
+        <motion.div
           whileHover={{ x: 10 }}
           className="group"
         >
@@ -435,67 +420,61 @@ const Website = () => {
           </p>
         </motion.div>
       </div>
-      <motion.button 
-        whileHover={{ x: 10 }}
-        className="mt-12 px-8 py-4 bg-white dark:bg-neutral-800 text-neutral-800 dark:text-white rounded-full flex items-center gap-3 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all text-sm border border-neutral-200 dark:border-neutral-700"
-      >
-        СЕРТИФИКАТЫ И ДИПЛОМЫ
-        <ArrowRight size={18} />
-      </motion.button>
     </div>
     <div>
-      <img 
-        src="/images/ps.png" 
-        alt="Professional portrait" 
+      <img
+        src="/images/ps.png"
+        alt="Professional portrait"
         className="rounded-lg w-full h-auto object-cover"
       />
     </div>
   </div>
 </section>
-      {/* Testimonials Section */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUpVariants}
-        className="py-24 bg-white dark:bg-neutral-900"
-      >
-        <div className="max-w-7xl mx-auto px-12">
-          <h2 className="text-4xl text-center mb-12 dark:text-white">Отзывы клиентов</h2>
-          <div className="grid grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -5 }}
-                className="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-800"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <div className="font-medium dark:text-white">{testimonial.name}</div>
-                    <div className="flex text-amber-500">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} size={16} fill="currentColor" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-neutral-600 dark:text-neutral-400">{testimonial.text}</p>
-              </motion.div>
-            ))}
+
+{/* Testimonials Section */}
+<motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={fadeInUpVariants}
+  className="py-24 bg-[#f6f2ec] dark:bg-neutral-900"
+>
+  <div className="max-w-7xl mx-auto px-12">
+    <h2 className="text-4xl text-center mb-12 text-neutral-800 dark:text-white">Отзывы клиентов</h2>
+    <div className="grid grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <motion.div
+          key={index}
+          whileHover={{ y: -5 }}
+          className="p-6 rounded-2xl bg-white dark:bg-neutral-800"
+        >
+          <div className="flex items-center gap-4 mb-4">
+            <img
+              src={testimonial.image}
+              alt={testimonial.name}
+              className="w-12 h-12 rounded-full object-cover"
+            />
+            <div>
+              <div className="font-medium text-neutral-800 dark:text-white">{testimonial.name}</div>
+              <div className="flex text-amber-700">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} size={16} fill="currentColor" />
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </motion.section>
+          <p className="text-neutral-600 dark:text-neutral-400">{testimonial.text}</p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</motion.section>
 
 {/* Services Section */}
 <section id="services" className="min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24">
   <div className="max-w-7xl mx-auto px-12">
     <div className="mb-24">
-      <p className="text-neutral-400 text-sm mb-4 tracking-wide">(услуги)</p>
+      <p className="text-neutral-400 text-sm mb-4 tracking-wide"></p>
       <h2 className="text-neutral-800 dark:text-white text-5xl font-light mb-8">
         Форматы работы
       </h2>
@@ -514,8 +493,8 @@ const Website = () => {
           Персональные сессии для глубокой проработки личных запросов и достижения ваших целей
         </p>
         <div className="flex justify-between items-center text-neutral-800 dark:text-white">
-          <span>от 3000₪</span>
-          <span>60 минут</span>
+          <span>от 1000 рублей</span>
+          <span>75 минут</span>
         </div>
       </motion.div>
 
@@ -531,8 +510,8 @@ const Website = () => {
           Удобный формат работы из любой точки мира через Zoom или другие платформы
         </p>
         <div className="flex justify-between items-center text-neutral-800 dark:text-white">
-          <span>от 2500₪</span>
-          <span>60 минут</span>
+          <span>от 500 рублей</span>
+          <span>75 минут</span>
         </div>
       </motion.div>
 
@@ -548,7 +527,7 @@ const Website = () => {
           Знакомство и обсуждение запроса для определения формата дальнейшей работы
         </p>
         <div className="flex justify-between items-center text-neutral-800 dark:text-white">
-          <span>1000₪</span>
+          <span>Бесплатно</span>
           <span>30 минут</span>
         </div>
       </motion.div>
@@ -596,25 +575,6 @@ const Website = () => {
         </div>
       </section>
 
-      {/* Floating Action Buttons */}
-      <div className="fixed bottom-8 right-8 flex flex-col gap-4">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="p-4 rounded-full bg-amber-700 text-white shadow-lg hover:bg-amber-800 transition-colors"
-        >
-          <MessageCircle size={24} />
-        </motion.button>
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="p-4 rounded-full bg-amber-700 text-white shadow-lg hover:bg-amber-800 transition-colors"
-        >
-          <Calendar size={24} />
-        </motion.button>
-      </div>
-
-
 
 
 {/* Footer */}
@@ -647,7 +607,8 @@ const Website = () => {
     </div>
     <div className="text-center">
       <a href="tel:+79898400176" className="text-4xl text-neutral-800 dark:text-white hover:text-amber-700 dark:hover:text-amber-700 transition-colors">
-        7 (989) 840-01-76
+       Телеграм, Вацап: 7 (988) 406-89-83
+        +972-53-861-1117
       </a>
     </div>
   </div>
