@@ -12,19 +12,17 @@ const geistMono = Geist_Mono({
  subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
- title: "Андрей Малик - Психолог",
- description: "Психологическая помощь и консультации в Израиле. Индивидуальная терапия онлайн и лично.",
- keywords: ["психолог", "психотерапия", "консультации", "Израиль", "онлайн терапия"],
- authors: [{ name: "Андрей Малик" }],
- openGraph: {
-   title: "Андрей Малик - Психолог",
-   description: "Психологическая помощь и консультации в Израиле",
-   url: "https://andrewmalik.com",
-   siteName: "Андрей Малик - Психолог",
-   locale: "ru_RU",
-   type: "website",
- },
+  title: "Андрей Малик - Психолог | Консультации онлайн",
+  description: "Психологическая помощь и консультации. Индивидуальная терапия онлайн и в Израиле. Эмоционально-образная терапия, КПТ.",
+  openGraph: {
+    title: "Андрей Малик - Психолог",
+    description: "Психологическая помощь и консультации онлайн",
+    type: "website",
+    url: "https://andrewmalik.com",
+  }
+,
  robots: {
    index: true,
    follow: true,
