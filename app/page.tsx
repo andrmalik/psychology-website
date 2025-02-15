@@ -9,8 +9,9 @@ export default function Page() {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);  // стало
   const heroRef = useRef(null);
+  
 
   const { scrollYProgress } = useScroll({
     target: heroRef,

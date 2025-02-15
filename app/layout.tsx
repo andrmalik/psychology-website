@@ -16,6 +16,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Андрей Малик - Психолог | Консультации онлайн",
   description: "Психологическая помощь и консультации. Индивидуальная терапия онлайн и в Израиле. Эмоционально-образная терапия, КПТ.",
+  applicationName: "Андрей Малик - Психолог",
+  keywords: ["психолог", "психотерапия", "консультации", "Израиль", "онлайн терапия"], 
   openGraph: {
     title: "Андрей Малик - Психолог",
     description: "Психологическая помощь и консультации онлайн",
@@ -28,8 +30,8 @@ export const metadata: Metadata = {
    follow: true,
  },
  icons: {
-   icon: "/favicon.ico",
-   apple: "/apple-icon.png",
+   icon: "favicon.ico",
+   apple: "apple-icon.png",
  },
 };
 
