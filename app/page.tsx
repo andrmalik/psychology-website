@@ -372,6 +372,7 @@ const Website = () => {
               </button>
             </div>
           </div>
+
 {/* About Section */}
 <section id="about" className="min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24">
   <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
@@ -493,7 +494,7 @@ const Website = () => {
           Персональные сессии для глубокой проработки личных запросов и достижения ваших целей
         </p>
         <div className="flex justify-between items-center text-neutral-800 dark:text-white">
-          <span>от 1000 рублей</span>
+          <span>от 150₪</span>
           <span>75 минут</span>
         </div>
       </motion.div>
@@ -510,7 +511,7 @@ const Website = () => {
           Удобный формат работы из любой точки мира через Zoom или другие платформы
         </p>
         <div className="flex justify-between items-center text-neutral-800 dark:text-white">
-          <span>от 500 рублей</span>
+          <span>от 100₪</span>
           <span>75 минут</span>
         </div>
       </motion.div>
