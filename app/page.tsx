@@ -399,32 +399,30 @@ function Page() {
           </div>
         </div>
       </nav>
+      
+{/* Hero Section */}
+<section 
+  ref={heroRef} 
+  className="relative min-h-screen w-full flex items-end bg-black"
+>
+  <motion.div 
+    style={{ y }}
+    className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
+  >
+    <img
+      src="/images/background.png"
+      alt="Professional portrait"
+      className="w-full h-full object-cover object-center"
+      priority
+    />
+    <div className="absolute inset-0 bg-black/30" /> {/* Overlay */}
+  </motion.div>
 
-      {/* Hero Section */}
-      <section 
-        ref={heroRef as React.RefObject<HTMLElement>} 
-        className="relative h-screen flex items-end pb-48 bg-black"
-        aria-label="Главный экран"
-      >
-        <div className="relative w-full h-full">
-          {!imageLoaded && (
-            <div className="absolute inset-0 bg-neutral-100 dark:bg-neutral-800 animate-pulse" />
-          )}
-          <motion.div 
-            style={{ y }}
-            className="absolute inset-0 w-full h-full z-0"
-          >
-            <img
-              src="/images/background.png"
-              alt="Professional portrait"
-              className={`w-full h-full object-cover transition-opacity duration-300 ${
-                imageLoaded ? 'opacity-70' : 'opacity-0'
-              }`}
-              onLoad={() => setImageLoaded(true)}
-            />
-          </motion.div>
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-12 ml-auto w-2/3 text-right">
+  <div className="relative z-10 max-w-7xl mx-auto px-12 ml-auto w-2/3 text-right pb-48">
+
+
+
+
           <div className="flex gap-4 mb-12 justify-end">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
