@@ -432,13 +432,22 @@ function Page() {
           </div>
 
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="text-8xl text-white mb-6 font-extralight tracking-wide leading-tight"
-          >
-            Студент<br />Психолог
-          </motion.h1>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6 }}
+  className="text-8xl text-white mb-2 font-extralight tracking-wide"
+>
+  Студент Психолог
+</motion.h1>
+
+<motion.h2 
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.7 }}
+  className="text-6xl text-white mb-6 tracking-wide"
+>
+  <span className="font-roslindale">Андрей</span> Малик
+</motion.h2>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -483,7 +492,8 @@ function Page() {
             <h2 className="text-5xl font-light text-neutral-800 dark:text-white mb-2">
               Ценные навыки, которые
             </h2>
-            <p className="text-3xl text-amber-700/90 italic">вы приобретёте</p>
+<p className="text-3xl text-amber-700/90 font-roslindale">вы приобретёте</p>
+
           </div>
 
           <div className="grid grid-cols-3 gap-8 mb-12">
@@ -571,9 +581,9 @@ function Page() {
     <div className="flex justify-between items-center mb-12">
       <div>
         <div className="flex items-baseline gap-4">
-          <h2 className="text-amber-700/90 text-5xl font-light italic">
-            Поддержу
-          </h2>
+        <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
+  Поддержу
+</h2>
           <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
             в решении трудностей
           </h2>
@@ -654,8 +664,8 @@ function Page() {
           <div>
             <div className="mb-12">
               <h2 className="text-neutral-800 dark:text-white text-5xl mb-2">Меня</h2>
-              <h2 className="text-amber-700 text-5xl italic mb-2">зовут</h2>
-              <h2 className="text-neutral-800 dark:text-white text-5xl">Андрей Малик</h2>
+              <h2 className="text-amber-700 text-5xl font-roslindale mb-2">зовут</h2>
+                            <h2 className="text-neutral-800 dark:text-white text-5xl">Андрей Малик</h2>
             </div>
             
             <div className="grid gap-12">
@@ -822,9 +832,12 @@ function Page() {
             </p>
           </div>
           <div>
-            <h2 className="text-neutral-800 dark:text-white text-3xl mb-4">
-              Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
-            </h2>
+  <h2 className="text-[#544B42] dark:text-white text-4xl mb-4">
+    Начните новую жизнь <span className="text-amber-700 font-roslindale">уже сегодня</span>
+  </h2>
+  <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
+    Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
+  </p>
             <form 
               onSubmit={handleFormSubmit}
               className="space-y-6 mt-12"
