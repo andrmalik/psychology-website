@@ -561,25 +561,53 @@ function Page() {
         </div>
       </motion.section>
 
-      {/* Support Section */}
+{/* Support Section */}
 <section 
   id="requests" 
   className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
   aria-label="Поддержка"
 >
   <div className="max-w-7xl mx-auto px-12">
-    <div className="mb-24">
-      <div className="flex items-baseline gap-4">
-        <h2 className="text-amber-700/90 text-5xl font-light italic">
-          Поддержу
-        </h2>
-        <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
-          в решении трудностей
-        </h2>
+    <div className="flex justify-between items-center mb-12">
+      <div>
+        <div className="flex items-baseline gap-4">
+          <h2 className="text-amber-700/90 text-5xl font-light italic">
+            Поддержу
+          </h2>
+          <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
+            в решении трудностей
+          </h2>
+        </div>
+        <p className="text-neutral-500 dark:text-neutral-400 mt-4">
+          Мысли, которые разрушительно влияют на нас и окружение
+        </p>
       </div>
-      <p className="text-neutral-500 dark:text-neutral-400 mt-4">
-        Мысли, которые разрушительно влияют на нас и окружение
-      </p>
+
+      {/* Кнопки навигации перемещены сюда */}
+      <div className="flex gap-4">
+        <button 
+          onClick={() => scroll('left')}
+          className="p-4 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
+          aria-label="Прокрутить влево"
+        >
+          <ArrowLeft 
+            size={24} 
+            className="text-amber-700 transition-colors"
+            aria-hidden="true"
+          />
+        </button>
+        <button 
+          onClick={() => scroll('right')}
+          className="p-4 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
+          aria-label="Прокрутить вправо"
+        >
+          <ArrowRight 
+            size={24} 
+            className="text-amber-700 transition-colors"
+            aria-hidden="true"
+          />
+        </button>
+      </div>
     </div>
 
     <div 
@@ -594,7 +622,8 @@ function Page() {
         <motion.div 
           key={`support-${index}`}
           variants={fadeInUpVariants}
-          className="min-w-[400px] h-[500px] flex-shrink-0 bg-white dark:bg-neutral-800 rounded-lg p-8 border border-neutral-200 dark:border-neutral-700 flex flex-col"
+          className="min-w-[280px] h-[400px] flex-shrink-0 bg-white dark:bg-neutral-800 rounded-lg p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col"
+          style={{ width: 'calc(22% - 1rem)' }} // Примерно 4.5 блока будут видны
         >
           <div className="text-neutral-400 text-lg italic mb-auto">{item.number}</div>
           
@@ -602,7 +631,7 @@ function Page() {
             {item.title}
           </p>
 
-          <div className="w-full h-[200px] overflow-hidden rounded-lg mt-auto">
+          <div className="w-full h-[120px] overflow-hidden rounded-lg mt-auto">
             <img 
               src={item.image} 
               alt={item.title}
@@ -613,34 +642,8 @@ function Page() {
         </motion.div>
       ))}
     </div>
-
-    <div className="flex justify-center gap-4 mt-8">
-      <button 
-        onClick={() => scroll('left')}
-        className="p-4 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
-        aria-label="Прокрутить влево"
-      >
-        <ArrowLeft 
-          size={24} 
-          className="text-neutral-400 group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-300 transition-colors"
-          aria-hidden="true"
-        />
-      </button>
-      <button 
-        onClick={() => scroll('right')}
-        className="p-4 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
-        aria-label="Прокрутить вправо"
-      >
-        <ArrowRight 
-          size={24} 
-          className="text-neutral-400 group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-300 transition-colors"
-          aria-hidden="true"
-        />
-      </button>
-    </div>
   </div>
 </section>
-
       {/* About Section */}
       <section 
         id="about" 
