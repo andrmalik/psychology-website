@@ -405,8 +405,8 @@ function Page() {
     <div className="absolute inset-0 bg-black/30" />
   </motion.div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-12 w-2/3 text-right pb-48 ml-auto mr-[-200px]"> {/* Изменены отступы */}
-  <div className="flex gap-4 mb-12 justify-end"> {/* justify-end оставляем */}
+  <div className="relative z-10 max-w-7xl mx-auto px-12 w-1/2 text-right pb-48 ml-auto mr-[-100px]"> {/* Изменена ширина на w-1/2 и уменьшен отрицательный отступ */}
+  <div className="flex gap-4 mb-12 justify-end">
     <motion.span 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -825,15 +825,15 @@ function Page() {
       </p>
     </div>
     <div>
-    <div className="mb-32 mt-[-100px]">
-  <h2 className="text-[#544B42] dark:text-white text-5xl font-light">
+<div className="mb-32 mt-[-150px]"> {/* Увеличен отрицательный отступ сверху */}
+  <h2 className="text-[#544B42] dark:text-white text-5xl font-light mb-24"> {/* Увеличен отступ снизу */}
     Начните новую жизнь<br />
     <span className="text-amber-700 font-roslindale">уже сегодня</span>
-        </h2>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
-          Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
-        </p>
-      </div>
+  </h2>
+  <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4 mt-12"> {/* Добавлен отступ сверху */}
+    Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
+  </p>
+</div>
       <form 
         onSubmit={handleFormSubmit}
         className="space-y-6 mt-12"
