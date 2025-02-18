@@ -407,7 +407,7 @@ function Page() {
     <div className="absolute inset-0 bg-black/30" /> {/* Overlay */}
   </motion.div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-12 ml-auto w-1/2 text-right pb-48">
+  <div className="relative z-10 max-w-7xl mx-auto px-12 w-2/3 text-right pb-48"> 
 
 
 
@@ -435,7 +435,7 @@ function Page() {
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.6 }}
-  className="text-8xl text-white mb-2 font-extralight tracking-wide"
+  className="text-8xl text-white mb-2 font-extralight tracking-wide whitespace-nowrap" // добавили whitespace-nowrap
 >
   Студент Психолог
 </motion.h1>
@@ -584,7 +584,7 @@ function Page() {
     Поддержу
   </h2>
   <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
-    в решении<br />трудностей
+    в решении трудностей
   </h2>
 </div>
         <p className="text-neutral-500 dark:text-neutral-400 mt-4">
@@ -662,7 +662,8 @@ function Page() {
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
           <div>
           <div className="mb-12">
-  <h2 className="text-neutral-800 dark:text-white text-5xl mb-2">Меня зовут</h2>
+  <h2 className="text-neutral-800 dark:text-white text-5xl mb-2">Меня</h2>
+  <h2 className="text-amber-700 text-5xl font-roslindale mb-2">зовут</h2>
   <h2 className="text-neutral-800 dark:text-white text-5xl">Андрей Малик</h2>
 </div>
             
@@ -830,11 +831,12 @@ function Page() {
             </p>
           </div>
           <div>
-          <div className="pt-12"> 
+          <div className="mb-24"> 
   <h2 className="text-[#544B42] dark:text-white text-4xl mb-4">
     Начните новую жизнь<br />
     <span className="text-amber-700 font-roslindale">уже сегодня</span>
   </h2>
+</div>
   <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
     Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
   </p>
