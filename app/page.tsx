@@ -407,7 +407,7 @@ function Page() {
     <div className="absolute inset-0 bg-black/30" /> {/* Overlay */}
   </motion.div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-12 w-2/3 text-right pb-48"> 
+  <div className="relative z-10 max-w-7xl mx-auto px-12 w-1/3 text-right pb-48"> 
 
 
 
@@ -577,7 +577,7 @@ function Page() {
   aria-label="Поддержка"
 >
   <div className="max-w-7xl mx-auto px-12">
-    <div className="flex justify-between items-center mb-12">
+    <div className="flex justify-between items-center mb-32">
       <div>
       <div className="flex items-baseline gap-4">
   <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
@@ -814,15 +814,15 @@ function Page() {
       </section>
 {/* Contact Section */}
 <section 
-  id="contacts" 
+  id="contacts"
   className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
   aria-label="Контакты"
 >
   <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
     <div>
-      <img 
-        src="/images/contacts.png" 
-        alt="Контактное изображение" 
+      <img
+        src="/images/contacts.png"
+        alt="Контактное изображение"
         loading="lazy"
         className="rounded-lg w-full h-auto object-cover"
       />
@@ -831,7 +831,7 @@ function Page() {
       </p>
     </div>
     <div>
-      <div className="mb-24"> 
+      <div className="mb-32 mt-[-100px]"> {/* Изменены отступы */}
         <h2 className="text-[#544B42] dark:text-white text-4xl mb-4">
           Начните новую жизнь<br />
           <span className="text-amber-700 font-roslindale">уже сегодня</span>
