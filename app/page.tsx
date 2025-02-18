@@ -32,7 +32,7 @@ interface FormErrors {
   agreement: string;
 }
 
-export default function Page() {
+function Page() {
   // Состояния
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
