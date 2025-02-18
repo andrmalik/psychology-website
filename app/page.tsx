@@ -562,82 +562,84 @@ function Page() {
       </motion.section>
 
       {/* Support Section */}
-      <section 
+<section 
   id="requests" 
   className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
+  aria-label="Поддержка"
+>
+  <div className="max-w-7xl mx-auto px-12">
+    <div className="mb-24">
+      <div className="flex items-baseline gap-4">
+        <h2 className="text-amber-700/90 text-5xl font-light italic">
+          Поддержу
+        </h2>
+        <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
+          в решении трудностей
+        </h2>
+      </div>
+      <p className="text-neutral-500 dark:text-neutral-400 mt-4">
+        Мысли, которые разрушительно влияют на нас и окружение
+      </p>
+    </div>
 
-        aria-label="Поддержка"
+    <div 
+      ref={scrollContainerRef}
+      className="flex overflow-x-auto hide-scrollbar gap-8"
+      style={{
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+      }}
+    >
+      {supportItems.slice(0, 4).map((item, index) => (
+        <motion.div 
+          key={`support-${index}`}
+          variants={fadeInUpVariants}
+          className="min-w-[400px] h-[500px] flex-shrink-0 bg-white dark:bg-neutral-800 rounded-lg p-8 border border-neutral-200 dark:border-neutral-700 flex flex-col"
+        >
+          <div className="text-neutral-400 text-lg italic mb-auto">{item.number}</div>
+          
+          <p className="text-neutral-700 dark:text-neutral-300 text-lg leading-relaxed mb-8">
+            {item.title}
+          </p>
+
+          <div className="w-full h-[200px] overflow-hidden rounded-lg mt-auto">
+            <img 
+              src={item.image} 
+              alt={item.title}
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+    <div className="flex justify-center gap-4 mt-8">
+      <button 
+        onClick={() => scroll('left')}
+        className="p-4 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
+        aria-label="Прокрутить влево"
       >
-        <div className="max-w-7xl mx-auto px-12">
-          <div className="mb-24">
-            <div className="flex items-baseline gap-4">
-              <h2 className="text-amber-700/90 text-5xl font-light italic">
-                Поддержу
-              </h2>
-              <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
-                в решении трудностей
-              </h2>
-            </div>
-            <p className="text-neutral-500 dark:text-neutral-400 mt-4">
-              Мысли, которые разрушительно влияют на нас и окружение
-            </p>
-          </div>
-
-          <div className="relative" role="region" aria-label="Карусель запросов">
-            <button 
-              onClick={() => scroll('left')}
-              className="absolute -left-12 top-1/2 -translate-y-1/2 z-10 p-4 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
-              aria-label="Прокрутить влево"
-            >
-              <ArrowLeft 
-                size={24} 
-                className="text-neutral-400 group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-300 transition-colors" 
-                aria-hidden="true"
-              />
-            </button>
-
-            <div 
-              ref={scrollContainerRef}
-              className="flex overflow-x-auto hide-scrollbar gap-12"
-              style={{
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none',
-              }}
-            >
-              {supportItems.map((item, index) => (
-                <motion.div 
-                  key={`support-${index}`}
-                  variants={fadeInUpVariants}
-                  className="w-[31%] flex-shrink-0 group"
-                >
-                  <div className="text-neutral-400 mb-6 text-lg italic" aria-hidden="true">{item.number}</div>
-                  <div className="aspect-4/3 overflow-hidden rounded-lg mb-6">
-                    <img 
-                      src={item.image} 
-                      alt={item.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <p className="text-neutral-700 dark:text-neutral-300 text-lg leading-relaxed">{item.title}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            <button 
-              onClick={() => scroll('right')}
-              className="absolute -right-12 top-1/2 -translate-y-1/2 z-10 p-4 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
-              aria-label="Прокрутить вправо"
-            >
-              <ArrowRight 
-                size={24} 
-                className="text-neutral-400 group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-300 transition-colors" 
-                aria-hidden="true"
-              />
-            </button>
-          </div>
-        </div>
-      </section>
+        <ArrowLeft 
+          size={24} 
+          className="text-neutral-400 group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-300 transition-colors"
+          aria-hidden="true"
+        />
+      </button>
+      <button 
+        onClick={() => scroll('right')}
+        className="p-4 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
+        aria-label="Прокрутить вправо"
+      >
+        <ArrowRight 
+          size={24} 
+          className="text-neutral-400 group-hover:text-neutral-600 dark:text-neutral-500 dark:group-hover:text-neutral-300 transition-colors"
+          aria-hidden="true"
+        />
+      </button>
+    </div>
+  </div>
+</section>
 
       {/* About Section */}
       <section 
