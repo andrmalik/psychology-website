@@ -819,9 +819,6 @@ function Page() {
   aria-label="Контакты"
 >
   <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
-  <div className="mt-[-100px]"> {/* добавлен отрицательный отступ сверху */}
-  <div className="mb-32">
-    
     <div>
       <img 
         src="/images/contacts.png" 
