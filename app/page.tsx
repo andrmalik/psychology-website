@@ -656,9 +656,9 @@ function Page() {
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
           <div>
           <div className="mb-12">
-  <h2 className="text-neutral-800 dark:text-white text-5xl mb-2">Меня</h2>
+  <h2 className="text-[#544B42] dark:text-white text-5xl font-light">Меня</h2>
   <h2 className="text-amber-700 text-5xl font-roslindale mb-2">зовут</h2>
-  <h2 className="text-neutral-800 dark:text-white text-5xl">Андрей Малик</h2>
+  <h2 className="text-[#544B42] dark:text-white text-5xl font-light">Андрей Малик</h2>
 </div>
             
             <div className="grid gap-12">
@@ -825,10 +825,10 @@ function Page() {
       </p>
     </div>
     <div>
-      <div className="mb-24"> 
-        <h2 className="text-[#544B42] dark:text-white text-4xl mb-4">
-          Начните новую жизнь<br />
-          <span className="text-amber-700 font-roslindale">уже сегодня</span>
+    <div className="mb-32 mt-[-100px]">
+  <h2 className="text-[#544B42] dark:text-white text-5xl font-light">
+    Начните новую жизнь<br />
+    <span className="text-amber-700 font-roslindale">уже сегодня</span>
         </h2>
         <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
           Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
