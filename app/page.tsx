@@ -388,7 +388,9 @@ function Page() {
 </div>
         </div>
       </nav>
-      <section 
+      
+{/* Hero Section */}
+<section 
   ref={heroRef} 
   className="relative min-h-screen w-full flex items-end bg-[#f6f2ec]"
 >
@@ -402,77 +404,81 @@ function Page() {
       className="w-full h-full object-cover object-center"
       priority
     />
-    <div className="absolute inset-0 bg-black/30" />
+    <div className="absolute inset-0 bg-black/30" /> {/* Overlay */}
   </motion.div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-12 w-2/3 text-right pb-48 ml-[-200px]"> {/* Добавлен отступ влево */}
-    <div className="flex gap-4 mb-12 justify-end">
-      <motion.span 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="px-6 py-2 bg-[#E1EAD7]/50 backdrop-blur-sm rounded-full text-sm tracking-wide text-white"
-      >
-        Индивидуальная терапия
-      </motion.span>
-      <motion.span 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="px-6 py-2 bg-[#E1EAD7]/50 backdrop-blur-sm rounded-full text-sm tracking-wide text-white"
-      >
-        Онлайн и лично (в Израиле)
-      </motion.span>
-    </div>
+  <div className="relative z-10 max-w-7xl mx-auto px-12 w-1/3 text-right pb-48"> 
 
-    <motion.h1 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.6 }}
-      className="text-8xl text-white mb-2 font-extralight tracking-wide whitespace-nowrap"
-    >
-      Студент Психолог
-    </motion.h1>
 
-    <motion.h1
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.7 }}
-      className="text-8xl text-white mb-6 tracking-wide whitespace-nowrap" {/* Добавлен whitespace-nowrap */}
-    >
-      <span className="font-roslindale">Андрей</span> Малик
-    </motion.h1>
 
-    <motion.p 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.8 }}
-      className="text-xl text-white/90 mb-12 tracking-wide ml-auto max-w-xl"
-    >
-      Терапия, вдохновленная мудростью и спокойствием Рима
-    </motion.p>
 
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1 }}
-      className="flex justify-end"
-    >
-      <button 
-        className="px-8 py-4 bg-white text-neutral-900 rounded-full flex items-center gap-3 hover:bg-neutral-100 transition-all text-sm tracking-wide group"
-        onClick={() => scrollToSection('contacts')}
-        aria-label="Спланировать консультацию"
-      >
-        Спланировать консультацию
-        <ArrowUpRight 
-          size={18} 
-          className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" 
-          aria-hidden="true"
-        />
-      </button>
-    </motion.div>
-  </div>
-</section>
+          <div className="flex gap-4 mb-12 justify-end">
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="px-6 py-2 bg-[#E1EAD7]/50 backdrop-blur-sm rounded-full text-sm tracking-wide text-white"
+            >
+              Индивидуальная терапия
+            </motion.span>
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="px-6 py-2 bg-[#E1EAD7]/50 backdrop-blur-sm rounded-full text-sm tracking-wide text-white"
+            >
+              Онлайн и лично (в Израиле)
+            </motion.span>
+          </div>
+
+          <motion.h1 
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6 }}
+  className="text-8xl text-white mb-2 font-extralight tracking-wide whitespace-nowrap" // добавили whitespace-nowrap
+>
+  Студент Психолог
+</motion.h1>
+
+<motion.h1  // изменено с h2 на h1 и размер text-8xl
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.7 }}
+  className="text-8xl text-white mb-6 tracking-wide"
+>
+  <span className="font-roslindale">Андрей</span> Малик
+</motion.h1>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="text-xl text-white/90 mb-12 tracking-wide ml-auto max-w-xl"
+          >
+            Терапия, вдохновленная мудростью и спокойствием Рима
+          </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+            className="flex justify-end"
+          >
+            <button 
+              className="px-8 py-4 bg-white text-neutral-900 rounded-full flex items-center gap-3 hover:bg-neutral-100 transition-all text-sm tracking-wide group"
+              onClick={() => scrollToSection('contacts')}
+              aria-label="Спланировать консультацию"
+            >
+              Спланировать консультацию
+              <ArrowUpRight 
+                size={18} 
+                className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" 
+                aria-hidden="true"
+              />
+            </button>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Skills Section */}
       <section 
@@ -808,15 +814,18 @@ function Page() {
       </section>
 {/* Contact Section */}
 <section 
-  id="contacts"
+  id="contacts" 
   className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
   aria-label="Контакты"
 >
   <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
+  <div className="mt-[-100px]"> {/* добавлен отрицательный отступ сверху */}
+  <div className="mb-32">
+    
     <div>
-      <img
-        src="/images/contacts.png"
-        alt="Контактное изображение"
+      <img 
+        src="/images/contacts.png" 
+        alt="Контактное изображение" 
         loading="lazy"
         className="rounded-lg w-full h-auto object-cover"
       />
@@ -825,7 +834,7 @@ function Page() {
       </p>
     </div>
     <div>
-      <div className="mb-32 mt-[-100px]"> {/* Изменены отступы */}
+      <div className="mb-24"> 
         <h2 className="text-[#544B42] dark:text-white text-4xl mb-4">
           Начните новую жизнь<br />
           <span className="text-amber-700 font-roslindale">уже сегодня</span>
