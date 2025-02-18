@@ -371,39 +371,38 @@ function Page() {
               </a>
             </div>
           </div>
-
           <div className="flex items-center gap-4">
-            <button 
-              className="px-6 py-2 bg-amber-700/90 text-white rounded-full hover:bg-amber-800 transition-colors text-sm"
-              aria-label="Заказать звонок"
-            >
-              ЗАКАЗАТЬ ЗВОНОК
-            </button>
-            <button
-              onClick={() => setIsDarkMode(!isDarkMode)}
-              className="px-6 py-2 bg-amber-700/90 text-white rounded-full hover:bg-amber-800 transition-colors text-sm flex items-center gap-2"
-              aria-label={isDarkMode ? "Включить светлую тему" : "Включить тёмную тему"}
-            >
-              {isDarkMode ? (
-                <>
-                  <Sun size={18} aria-hidden="true" />
-                  <span className="sr-only">Светлая тема</span>
-                </>
-              ) : (
-                <>
-                  <Moon size={18} aria-hidden="true" />
-                  <span className="sr-only">Тёмная тема</span>
-                </>
-              )}
-            </button>
-          </div>
+  <button 
+    className="text-neutral-800 dark:text-white text-sm hover:text-amber-700 dark:hover:text-amber-700 transition-colors"
+    aria-label="Заказать звонок"
+  >
+    ЗАКАЗАТЬ ЗВОНОК
+  </button>
+  <button
+    onClick={() => setIsDarkMode(!isDarkMode)}
+    className="text-neutral-800 dark:text-white text-sm hover:text-amber-700 dark:hover:text-amber-700 transition-colors flex items-center gap-2"
+    aria-label={isDarkMode ? "Включить светлую тему" : "Включить тёмную тему"}
+  >
+    {isDarkMode ? (
+      <>
+        <Sun size={18} aria-hidden="true" />
+        <span className="sr-only">Светлая тема</span>
+      </>
+    ) : (
+      <>
+        <Moon size={18} aria-hidden="true" />
+        <span className="sr-only">Тёмная тема</span>
+      </>
+    )}
+  </button>
+</div>
         </div>
       </nav>
       
 {/* Hero Section */}
 <section 
   ref={heroRef} 
-  className="relative min-h-screen w-full flex items-end bg-black"
+  className="relative min-h-screen w-full flex items-end bg-[#f6f2ec]"
 >
   <motion.div 
     style={{ y }}
@@ -484,8 +483,9 @@ function Page() {
 
       {/* Skills Section */}
       <section 
-        id="skills" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-neutral-50 dark:bg-neutral-900 py-24"
+  id="skills" 
+  className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
+
         aria-label="Навыки и услуги"
       >
         <div className="max-w-7xl mx-auto px-12">
@@ -573,8 +573,9 @@ function Page() {
 
       {/* Support Section */}
       <section 
-        id="requests" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
+  id="requests" 
+  className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
+
         aria-label="Поддержка"
       >
         <div className="max-w-7xl mx-auto px-12">
