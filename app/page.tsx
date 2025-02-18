@@ -167,21 +167,20 @@ function Page() {
       }
     }
   };
-  // Scroll handlers
   const scrollToSection = useCallback((elementId: string): void => {
     const element = document.getElementById(elementId);
     if (!element) return;
-
+  
     const navHeight = document.querySelector('nav')?.offsetHeight || 0;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - navHeight;
-
+  
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth'
+      behavior: 'smooth'  // Только это свойство доступно
     });
   }, []);
-
+  
   const handleNavClick = useCallback((
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
@@ -371,9 +370,10 @@ function Page() {
               </a>
             </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4"><div className="flex items-center gap-8 ml-auto"> {/* Добавлен ml-auto для крайнего правого положения */}
   <button 
-    className="text-neutral-800 dark:text-white text-sm hover:text-amber-700 dark:hover:text-amber-700 transition-colors"
+    onClick={() => scrollToSection('contacts')}
+    className="text-neutral-800 dark:text-white text-sm hover:text-amber-700 dark:hover:text-amber-700 transition-colors mr-8"
     aria-label="Заказать звонок"
   >
     ЗАКАЗАТЬ ЗВОНОК
@@ -383,17 +383,7 @@ function Page() {
     className="text-neutral-800 dark:text-white text-sm hover:text-amber-700 dark:hover:text-amber-700 transition-colors flex items-center gap-2"
     aria-label={isDarkMode ? "Включить светлую тему" : "Включить тёмную тему"}
   >
-    {isDarkMode ? (
-      <>
-        <Sun size={18} aria-hidden="true" />
-        <span className="sr-only">Светлая тема</span>
-      </>
-    ) : (
-      <>
-        <Moon size={18} aria-hidden="true" />
-        <span className="sr-only">Тёмная тема</span>
-      </>
-    )}
+    {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
   </button>
 </div>
         </div>
