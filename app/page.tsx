@@ -407,7 +407,7 @@ function Page() {
     <div className="absolute inset-0 bg-black/30" /> {/* Overlay */}
   </motion.div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-12 ml-auto w-2/3 text-right pb-48">
+  <div className="relative z-10 max-w-7xl mx-auto px-12 ml-auto w-1/2 text-right pb-48">
 
 
 
@@ -440,14 +440,14 @@ function Page() {
   Студент Психолог
 </motion.h1>
 
-<motion.h2 
+<motion.h1  // изменено с h2 на h1 и размер text-8xl
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.7 }}
-  className="text-6xl text-white mb-6 tracking-wide"
+  className="text-8xl text-white mb-6 tracking-wide"
 >
   <span className="font-roslindale">Андрей</span> Малик
-</motion.h2>
+</motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -492,8 +492,7 @@ function Page() {
             <h2 className="text-5xl font-light text-neutral-800 dark:text-white mb-2">
               Ценные навыки, которые
             </h2>
-<p className="text-3xl text-amber-700/90 font-roslindale">вы приобретёте</p>
-
+            <p className="text-4xl text-amber-700/90 font-roslindale">вы приобретёте</p> 
           </div>
 
           <div className="grid grid-cols-3 gap-8 mb-12">
@@ -580,14 +579,14 @@ function Page() {
   <div className="max-w-7xl mx-auto px-12">
     <div className="flex justify-between items-center mb-12">
       <div>
-        <div className="flex items-baseline gap-4">
-        <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
-  Поддержу
-</h2>
-          <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
-            в решении трудностей
-          </h2>
-        </div>
+      <div className="flex items-baseline gap-4">
+  <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
+    Поддержу
+  </h2>
+  <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
+    в решении<br />трудностей
+  </h2>
+</div>
         <p className="text-neutral-500 dark:text-neutral-400 mt-4">
           Мысли, которые разрушительно влияют на нас и окружение
         </p>
@@ -662,11 +661,10 @@ function Page() {
       >
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
           <div>
-            <div className="mb-12">
-              <h2 className="text-neutral-800 dark:text-white text-5xl mb-2">Меня</h2>
-              <h2 className="text-amber-700 text-5xl font-roslindale mb-2">зовут</h2>
-                            <h2 className="text-neutral-800 dark:text-white text-5xl">Андрей Малик</h2>
-            </div>
+          <div className="mb-12">
+  <h2 className="text-neutral-800 dark:text-white text-5xl mb-2">Меня зовут</h2>
+  <h2 className="text-neutral-800 dark:text-white text-5xl">Андрей Малик</h2>
+</div>
             
             <div className="grid gap-12">
               {[
@@ -832,12 +830,15 @@ function Page() {
             </p>
           </div>
           <div>
+          <div className="pt-12"> 
   <h2 className="text-[#544B42] dark:text-white text-4xl mb-4">
-    Начните новую жизнь <span className="text-amber-700 font-roslindale">уже сегодня</span>
+    Начните новую жизнь<br />
+    <span className="text-amber-700 font-roslindale">уже сегодня</span>
   </h2>
   <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
     Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
   </p>
+</div>
             <form 
               onSubmit={handleFormSubmit}
               className="space-y-6 mt-12"
