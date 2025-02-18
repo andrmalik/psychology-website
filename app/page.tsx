@@ -405,7 +405,7 @@ function Page() {
     <div className="absolute inset-0 bg-black/30" />
   </motion.div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-12 w-1/2 text-right pb-48 ml-auto mr-[-35px]"> {/* Изменена ширина на w-1/2 и уменьшен отрицательный отступ */}
+  <div className="relative z-10 max-w-7xl mx-auto px-12 w-1/2 text-right pb-48 ml-auto mr-[-15px]"> {/* Изменена ширина на w-1/2 и уменьшен отрицательный отступ */}
   <div className="flex gap-4 mb-12 justify-end">
     <motion.span 
       initial={{ opacity: 0, y: 20 }}
@@ -806,7 +806,7 @@ function Page() {
           </div>
         </div>
       </section>
-      
+
       <section 
   id="contacts" 
   className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
@@ -831,7 +831,7 @@ function Page() {
           Начните новую жизнь<br />
           <span className="text-amber-700 font-roslindale">уже сегодня</span>
         </h2>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4 mt-12 mb-32"> {/* Добавлен отступ снизу mb-32 */}
+        <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4 mt-12 mb-10"> {/* Добавлен отступ снизу mb-32 */}
           Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
         </p>
       </div>
