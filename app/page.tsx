@@ -180,7 +180,7 @@ function Page() {
       behavior: 'smooth'  // Только это свойство доступно
     });
   }, []);
-  
+
   const handleNavClick = useCallback((
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
@@ -370,7 +370,7 @@ function Page() {
               </a>
             </div>
           </div>
-          <div className="flex items-center gap-4"><div className="flex items-center gap-8 ml-auto"> {/* Добавлен ml-auto для крайнего правого положения */}
+            <div className="flex items-center gap-8 ml-auto"> {/* Добавлен ml-auto для крайнего правого положения */}
   <button 
     onClick={() => scrollToSection('contacts')}
     className="text-neutral-800 dark:text-white text-sm hover:text-amber-700 dark:hover:text-amber-700 transition-colors mr-8"
