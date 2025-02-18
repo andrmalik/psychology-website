@@ -812,40 +812,39 @@ function Page() {
           </div>
         </div>
       </section>
-      {/* Contact Section */}
-      <section 
-        id="contacts" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
-        aria-label="Контакты"
+{/* Contact Section */}
+<section 
+  id="contacts" 
+  className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
+  aria-label="Контакты"
+>
+  <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
+    <div>
+      <img 
+        src="/images/contacts.png" 
+        alt="Контактное изображение" 
+        loading="lazy"
+        className="rounded-lg w-full h-auto object-cover"
+      />
+      <p className="text-neutral-600 dark:text-neutral-400 mt-6 text-lg">
+        Мы можем обсудить любой вопрос, который волнует вас
+      </p>
+    </div>
+    <div>
+      <div className="mb-24"> 
+        <h2 className="text-[#544B42] dark:text-white text-4xl mb-4">
+          Начните новую жизнь<br />
+          <span className="text-amber-700 font-roslindale">уже сегодня</span>
+        </h2>
+        <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
+          Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
+        </p>
+      </div>
+      <form 
+        onSubmit={handleFormSubmit}
+        className="space-y-6 mt-12"
+        aria-label="Форма обратной связи"
       >
-        <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
-          <div>
-            <img 
-              src="/images/contacts.png" 
-              alt="Контактное изображение" 
-              loading="lazy"
-              className="rounded-lg w-full h-auto object-cover"
-            />
-            <p className="text-neutral-600 dark:text-neutral-400 mt-6 text-lg">
-              Мы можем обсудить любой вопрос, который волнует вас
-            </p>
-          </div>
-          <div>
-          <div className="mb-24"> 
-  <h2 className="text-[#544B42] dark:text-white text-4xl mb-4">
-    Начните новую жизнь<br />
-    <span className="text-amber-700 font-roslindale">уже сегодня</span>
-  </h2>
-</div>
-  <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
-    Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
-  </p>
-</div>
-            <form 
-              onSubmit={handleFormSubmit}
-              className="space-y-6 mt-12"
-              aria-label="Форма обратной связи"
-            >
               <div>
                 <input 
                   type="text" 
