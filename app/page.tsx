@@ -580,6 +580,97 @@ function Page() {
   </div>
 </section>
 
+
+      {/* Skills Section */}
+      <section 
+  id="skills" 
+  className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
+
+        aria-label="Навыки и услуги"
+      >
+        <div className="max-w-7xl mx-auto px-12">
+          <div className="text-center mb-24">
+            <h2 className="text-5xl font-light text-neutral-800 dark:text-white mb-2">
+              Ценные навыки, которые
+            </h2>
+            <p className="text-4xl text-amber-700/90 font-roslindale">вы приобретёте</p> 
+          </div>
+
+          <div className="grid grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                title: "Понимание себя и своих истинных желаний",
+                description: "Глубокая работа над осознанием внутренних потребностей и желаний, помогает принять себя любым"
+              },
+              {
+                title: "Умение управлять стрессом и тревогой",
+                description: "Освоение техник, которые улучшают качество жизни, помогают фокусировать внутреннее спокойствие"
+              },
+              {
+                title: "Стабильная и прочная внутренняя опора",
+                description: "Помогает сохранять устойчивость и уверенность в любых жизненных ситуациях"
+              }
+            ].map((skill, index) => (
+              <motion.div 
+                key={`skill-${index}`}
+                whileHover={{ y: -5 }}
+                className="bg-white dark:bg-neutral-800 p-12 rounded-lg hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-xl text-neutral-800 dark:text-white mb-6 font-light">{skill.title}</h3>
+                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{skill.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 gap-8 px-32">
+            {[
+              {
+                title: "Принятие прошлого и отпускание обид",
+                description: "Проработка прошлых травм и обид помогает освободиться от их влияния, вы начинаете жить в настоящем"
+              },
+              {
+                title: "Навыки адаптации к изменениям жизни",
+                description: "Способность гибко реагировать на перемены, минимизируя стресс и сохраняя внутреннюю стабильность"
+              }
+            ].map((skill, index) => (
+              <motion.div 
+                key={`additional-skill-${index}`}
+                whileHover={{ y: -5 }}
+                className="bg-white dark:bg-neutral-800 p-12 rounded-lg hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-xl text-neutral-800 dark:text-white mb-6 font-light">{skill.title}</h3>
+                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{skill.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Statistics Section */}
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUpVariants}
+        className="scroll-mt-[80px] relative z-20 py-24 bg-white dark:bg-neutral-900"
+        aria-label="Статистика"
+      >
+        <div className="max-w-7xl mx-auto px-12">
+          <div className="grid grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div 
+                key={`stat-${stat.value}-${index}`}
+                variants={fadeInUpVariants}
+                className="text-center"
+              >
+                <stat.icon className="w-12 h-12 mx-auto mb-4 text-amber-700" aria-hidden="true" />
+                <div className="text-4xl font-bold mb-2 dark:text-white">{stat.value}</div>
+                <div className="text-neutral-600 dark:text-neutral-400">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
       {/* Problems Section */}
       <section className="relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24">
         <div className="max-w-7xl mx-auto px-12">
@@ -589,10 +680,17 @@ function Page() {
             transition={{ duration: 1 }}
             className="text-center mb-24"
           >
-            <h2 className="text-5xl font-light mb-2">
-              <span className="text-[#544B42] dark:text-white">Когда что-то идет не так –</span>{" "}
-              <span className="text-amber-700/90 font-roslindale">мы справимся</span>
-            </h2>
+<div className="flex items-baseline gap-4">
+  <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
+    Когда что-то идет не так
+  </h2>
+  <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
+    мы справимся
+  </h2>
+</div>
+<p className="text-neutral-500 dark:text-neutral-400 mt-4">
+  С вами все в порядке просто нужна терапия
+</p>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-8">
