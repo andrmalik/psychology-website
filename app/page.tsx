@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Moon, Sun, MessageCircle, Calendar, Star, Award, Users, Brain, Monitor, Heart } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Moon, Sun, MessageCircle, Calendar, Star, Award, Users, Brain, BookOpen } from 'lucide-react';
 import _ from 'lodash';
 
 // Типы
