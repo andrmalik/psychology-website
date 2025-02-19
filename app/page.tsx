@@ -3,9 +3,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Moon, Sun, MessageCircle, Calendar, Star, Award, Users, BookOpen } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Moon, Sun, MessageCircle, Calendar, Star, Award, Users, Brain, Monitor, Wine, Heart } from 'lucide-react';
 import _ from 'lodash';
-
 // Типы
 interface SupportItem {
   number: string;
@@ -405,7 +404,7 @@ function Page() {
     <div className="absolute inset-0 bg-black/30" />
   </motion.div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-12 w-1/2 text-right pb-25 ml-auto"> {/* Изменена ширина на w-1/2 и уменьшен отрицательный отступ */}
+  <div className="relative z-10 max-w-7xl mx-auto px-12 w-1/2 text-right pb-48 ml-auto mr-[-1px]"> {/* Изменена ширина на w-1/2 и уменьшен отрицательный отступ */}
   <div className="flex gap-4 mb-12 justify-end">
     <motion.span 
       initial={{ opacity: 0, y: 20 }}
@@ -473,6 +472,130 @@ function Page() {
     </motion.div>
   </div>
 </section>
+
+      {/* new Section */}
+
+<section className="relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24">
+        <div className="max-w-7xl mx-auto px-12">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="text-center mb-24"
+          >
+            <h2 className="text-5xl font-light mb-2">
+              <span className="text-[#544B42] dark:text-white">Когда что-то идет не так –</span>{" "}
+              <span className="text-amber-700/90 font-roslindale">мы справимся</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-2 gap-8">
+            {[
+              {
+                title: "Зависимости",
+                icon: Monitor,
+                gradient: "from-blue-50 to-purple-50",
+                darkGradient: "dark:from-blue-950/40 dark:to-purple-950/40",
+                borderColor: "border-purple-100 dark:border-purple-900/30",
+                iconColor: "text-purple-400",
+                problems: [
+                  "Не могу оторваться от компьютера и любимой игры",
+                  "Ищу утешение и радость в алкоголе",
+                  "Тревожусь из-за новостей",
+                  "Соц сети меня поглотили"
+                ]
+              },
+              {
+                title: "Трудности в общении",
+                icon: Users,
+                gradient: "from-green-50 to-teal-50",
+                darkGradient: "dark:from-green-950/40 dark:to-teal-950/40",
+                borderColor: "border-teal-100 dark:border-teal-900/30",
+                iconColor: "text-teal-400",
+                problems: [
+                  "Не могу спокойно говорить с родными, часто крики и агрессия",
+                  "Меня не понимают",
+                  "Мне не комфортно среди людей",
+                  "Долго не общался с родителями"
+                ]
+              },
+              {
+                title: "Отношения",
+                icon: Heart,
+                gradient: "from-rose-50 to-pink-50",
+                darkGradient: "dark:from-rose-950/40 dark:to-pink-950/40",
+                borderColor: "border-pink-100 dark:border-pink-900/30",
+                iconColor: "text-pink-400",
+                problems: [
+                  "Мой партнер унижает меня",
+                  "Я боюсь отказать, ведь тогда меня бросят",
+                  "Как раньше уже не будет",
+                  "Мной манипулируют"
+                ]
+              },
+              {
+                title: "Эмоциональная усталость, тревога",
+                icon: Brain,
+                gradient: "from-amber-50 to-yellow-50",
+                darkGradient: "dark:from-amber-950/40 dark:to-yellow-950/40",
+                borderColor: "border-yellow-100 dark:border-yellow-900/30",
+                iconColor: "text-yellow-400",
+                problems: [
+                  "Накручиваю себя и не вижу выхода",
+                  "В понедельник я раздавлен",
+                  "Не могу заснуть и листаю ленту до ночи"
+                ]
+              }
+            ].map((category, index) => (
+              <motion.div
+                key={index}
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                variants={containerVariants}
+                className={`relative overflow-hidden bg-gradient-to-br ${category.gradient} ${category.darkGradient} 
+                  p-8 rounded-2xl border ${category.borderColor} backdrop-blur-sm
+                  hover:shadow-lg transition-all duration-300`}
+              >
+                <motion.div 
+                  variants={titleVariants}
+                  className="flex items-center gap-4 mb-8"
+                >
+                  <div className={`p-3 rounded-xl bg-white/80 dark:bg-neutral-800/80 ${category.borderColor}`}>
+                    <category.icon size={24} className={category.iconColor} />
+                  </div>
+                  <h3 className="text-xl text-[#544B42] dark:text-white font-light">
+                    {category.title}
+                  </h3>
+                </motion.div>
+
+                <motion.div 
+                  className="space-y-4"
+                  variants={problemsContainerVariants}
+                >
+                  {category.problems.map((problem, pIndex) => (
+                    <motion.div
+                      key={pIndex}
+                      variants={problemVariants}
+                      className="overflow-hidden"
+                    >
+                      <div className="group flex items-start gap-3 p-2 rounded-lg 
+                        hover:bg-white/50 dark:hover:bg-neutral-800/50 transition-all duration-300">
+                        <div className={`w-2 h-2 mt-2 rounded-full bg-opacity-30 ${category.iconColor} 
+                          group-hover:scale-110 transition-all duration-300`} />
+                        <p className="text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-800 
+                          dark:group-hover:text-white transition-colors italic whitespace-nowrap">
+                          {problem}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Skills Section */}
       <section 
