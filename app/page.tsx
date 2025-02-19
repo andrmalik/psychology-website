@@ -678,9 +678,9 @@ function Page() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="text-center mb-24"
-          >
-<div className="flex items-baseline gap-4">
+            className="text-center mt-32 mb-32" // Changed from just mb-24 to add mt-32 and increase bottom margin
+            >
+              <div className="flex items-baseline gap-4 justify-center">
   <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
 
     Когда что-то идет не так
@@ -689,7 +689,7 @@ function Page() {
     мы справимся
   </h2>
 </div>
-<p className="text-neutral-500 dark:text-neutral-400 mt-4">
+<p className="text-neutral-500 dark:text-neutral-400 mt-8">
   С вами все в порядке просто нужна терапия
 </p>
           </motion.div>
