@@ -673,12 +673,12 @@ function Page() {
 
       {/* Problems Section */}
       <section className="relative z-20 min-h-screen flex items-end bg-[#f6f2ec] dark:bg-neutral-900 py-24"> {/* Changed items-center to items-end */}
-      <div className="max-w-7xl mx-auto px-12 mb-32"> {/* Added mb-32 */}
+      <div className="max-w-7xl mx-auto px-12 mb-12"> {/* Added mb-32 */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="text-center mb-24"
+            className="text-center mb-14"
             >
               <div className="flex items-baseline gap-4 justify-center">
   <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
@@ -689,7 +689,7 @@ function Page() {
     мы справимся
   </h2>
 </div>
-<p className="text-neutral-500 dark:text-neutral-400 mt-8">
+<p className="text-neutral-500 dark:text-neutral-400 mt-4">
 Проблемы, которые больше не придется решать в одиночку
 </p>
           </motion.div>
