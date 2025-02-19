@@ -741,6 +741,30 @@ function Page() {
         </div>
       </section>
 
+{/* Quote Section */}
+<section className="relative z-20 bg-[#f6f2ec] dark:bg-neutral-900 py-12"> {/* Smaller padding for a stripe-like section */}
+  <div className="max-w-7xl mx-auto px-12">
+    <div className="flex items-center justify-between">
+      <div className="w-1/2">
+        <h2 className="text-4xl font-light text-neutral-800 dark:text-white">
+          Можно ли разорвать эти циклы? Найти ответы? Почувствовать себя лучше?<br/>
+          Можно. Шаг за шагом. 
+          <span className="text-amber-700/90 font-roslindale"> И я помогу.</span>
+        </h2>
+      </div>
+      
+      <div className="w-1/3"> {/* Adjusted width for better proportion */}
+        <div className="aspect-square rounded-full overflow-hidden border-4 border-amber-700/20">
+          <img 
+            src="/images/new.png" 
+            alt="Portrait" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {/* Support Section */}
 <section 
