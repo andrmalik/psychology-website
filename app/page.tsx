@@ -672,13 +672,13 @@ function Page() {
       </motion.section>
 
       {/* Problems Section */}
-      <section className="relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24">
-        <div className="max-w-7xl mx-auto px-12">
+      <section className="relative z-20 min-h-screen flex items-end bg-[#f6f2ec] dark:bg-neutral-900 py-24"> {/* Changed items-center to items-end */}
+      <div className="max-w-7xl mx-auto px-12 mb-32"> {/* Added mb-32 */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="text-center mt-32 mb-32" // Changed from just mb-24 to add mt-32 and increase bottom margin
+            className="text-center mb-24"
             >
               <div className="flex items-baseline gap-4 justify-center">
   <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
@@ -690,7 +690,7 @@ function Page() {
   </h2>
 </div>
 <p className="text-neutral-500 dark:text-neutral-400 mt-8">
-  С вами все в порядке просто нужна терапия
+Проблемы, которые больше не придется решать в одиночку
 </p>
           </motion.div>
 
