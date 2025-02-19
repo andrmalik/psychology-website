@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Moon, Sun, MessageCircle, Calendar, Star, Award, Users, Brain, Monitor, Wine, Heart } from 'lucide-react';
 import _ from 'lodash';
+
 // Типы
 interface SupportItem {
   number: string;
@@ -473,9 +474,8 @@ function Page() {
   </div>
 </section>
 
-      {/* new Section */}
-
-<section className="relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24">
+      {/* New Problems Section */}
+      <section className="relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24">
         <div className="max-w-7xl mx-auto px-12">
           <motion.div 
             initial={{ opacity: 0 }}
@@ -553,9 +553,7 @@ function Page() {
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
-                className={`relative overflow-hidden bg-gradient-to-br ${category.gradient} ${category.darkGradient} 
-                  p-8 rounded-2xl border ${category.borderColor} backdrop-blur-sm
-                  hover:shadow-lg transition-all duration-300`}
+                className={`relative overflow-hidden bg-gradient-to-br ${category.gradient} ${category.darkGradient} p-8 rounded-2xl border ${category.borderColor} backdrop-blur-sm hover:shadow-lg transition-all duration-300`}
               >
                 <motion.div 
                   variants={titleVariants}
@@ -579,8 +577,7 @@ function Page() {
                       variants={problemVariants}
                       className="overflow-hidden"
                     >
-                      <div className="group flex items-start gap-3 p-2 rounded-lg 
-                        hover:bg-white/50 dark:hover:bg-neutral-800/50 transition-all duration-300">
+                      <div className="group flex items-start gap-3 p-2 rounded-lg hover:bg-white/50 dark:hover:bg-neutral-800/50 transition-all duration-300">
                         <div className={`w-2 h-2 mt-2 rounded-full bg-opacity-30 ${category.iconColor} 
                           group-hover:scale-110 transition-all duration-300`} />
                         <p className="text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-800 
