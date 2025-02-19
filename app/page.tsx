@@ -681,10 +681,11 @@ function Page() {
             className="text-center mb-24"
           >
 <div className="flex items-baseline gap-4">
-  <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
+  <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
+
     Когда что-то идет не так
   </h2>
-  <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
+  <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
     мы справимся
   </h2>
 </div>
