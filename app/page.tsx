@@ -727,6 +727,7 @@ function Page() {
     </div>
   </div>
 </section>
+
 {/* Support Section */}
 <section 
   id="requests" 
@@ -734,18 +735,23 @@ function Page() {
   aria-label="Поддержка"
 >
   <div className="w-full pr-0 pl-[max(12rem,calc((100vw-90rem)/2))]">
-    <div className="flex justify-between items-start mb-32">
-      <div className="flex items-baseline gap-4">
-        <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
-          Поддержу
-        </h2>
-        <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
-          в решении трудностей
+    <div className="mb-40">
+      <div className="flex flex-col mb-32">
+        <div className="flex items-baseline gap-4">
+          <h2 className="text-amber-700/90 text-5xl font-light font-roslindale uppercase">
+            Поддержу
+          </h2>
+          <h2 className="text-neutral-800 dark:text-white text-5xl font-light uppercase">
+            в решении
+          </h2>
+        </div>
+        <h2 className="text-neutral-800 dark:text-white text-5xl font-light uppercase mt-4">
+          трудностей
         </h2>
       </div>
 
-      <p className="text-neutral-500 dark:text-neutral-400 mt-4 max-w-md text-right mr-24">
-        Мысли, которые разрушительно влияют на нас<br/> и окружение
+      <p className="text-neutral-500 dark:text-neutral-400 max-w-md text-right mr-24">
+        Мысли, которые разрушительно <br/> влияют на нас и окружение
       </p>
     </div>
 
@@ -774,6 +780,7 @@ function Page() {
           />
         </button>
       </div>
+
 
       <div 
         ref={scrollContainerRef}
