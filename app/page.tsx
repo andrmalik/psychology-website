@@ -518,7 +518,7 @@ function Page() {
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.6 }}
-  className="text-8xl text-white mb-2 font-extralight tracking-wide whitespace-nowrap"
+  className="text-7xl text-white mb-2 font-extralight tracking-wide whitespace-nowrap"
 >
   Студент Психолог
 </motion.h1>
@@ -629,26 +629,6 @@ function Page() {
           </div>
         </div>
 
-      </section>{/* Statistics Section */}
-<section 
-  className="scroll-mt-[80px] relative z-20 py-24 bg-white dark:bg-neutral-900"
-  aria-label="Статистика"
->
-  <div className="max-w-7xl mx-auto px-12">
-    <div className="grid grid-cols-4 gap-8">
-      {stats.map((stat, index) => (
-        <div 
-          key={`stat-${stat.value}-${index}`}
-          className="text-center"
-        >
-          <stat.icon className="w-12 h-12 mx-auto mb-4 text-amber-700" aria-hidden="true" />
-          <div className="text-neutral-800 dark:text-white text-5xl font-light">{stat.value}</div>
-          <div className="text-neutral-600 dark:text-neutral-400">{stat.label}</div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
 
       {/* Problems Section */}
       <section className="relative z-20 min-h-screen flex items-end bg-[#f6f2ec] dark:bg-neutral-900 py-24"> {/* Changed items-center to items-end */}
@@ -832,7 +812,7 @@ function Page() {
       {/* About Section */}
       <section 
         id="about" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
+        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f5dfbd] dark:bg-neutral-900 py-24"
         aria-label="Обо мне"
       >
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
@@ -887,6 +867,26 @@ function Page() {
       </section>
 
 
+      </section>{/* Statistics Section */}
+<section 
+  className="scroll-mt-[80px] relative z-20 py-24 bg-white dark:bg-neutral-900"
+  aria-label="Статистика"
+>
+  <div className="max-w-7xl mx-auto px-12">
+    <div className="grid grid-cols-4 gap-8">
+      {stats.map((stat, index) => (
+        <div 
+          key={`stat-${stat.value}-${index}`}
+          className="text-center"
+        >
+          <stat.icon className="w-12 h-12 mx-auto mb-4 text-amber-700" aria-hidden="true" />
+          <div className="text-neutral-800 dark:text-white text-5xl font-light">{stat.value}</div>
+          <div className="text-neutral-600 dark:text-neutral-400">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Service Formats Section */}
       <section 
