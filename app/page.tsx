@@ -734,83 +734,78 @@ function Page() {
   aria-label="Поддержка"
 >
   <div className="w-full pr-0 pl-[max(12rem,calc((100vw-90rem)/2))]">
-    <div className="mb-40">
-      <div className="flex items-baseline gap-4 mb-32">
-        <h2 className="text-amber-700/90 text-5xl font-light font-roslindale uppercase">
-          Поддержу
-        </h2>
-        <h2 className="text-neutral-800 dark:text-white text-5xl font-light uppercase">
-          в решении трудностей
-        </h2>
+    <div className="flex justify-between items-center mb-32">
+      <div>
+        <div className="flex items-baseline gap-4">
+          <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
+            Поддержу
+          </h2>
+          <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
+            в решении трудностей
+          </h2>
+        </div>
+        <p className="text-neutral-500 dark:text-neutral-400 mt-4">
+          Мысли, которые разрушительно влияют на нас и окружение
+        </p>
       </div>
 
-      <p className="text-neutral-500 dark:text-neutral-400 max-w-md text-right mr-24">
-        Мысли, которые разрушительно <br/> влияют на нас и  окружение
-      </p>
-    </div>
-
-    <div className="relative">
-      <div className="absolute -top-20 left-0 flex gap-3">
+      <div className="flex gap-4">
         <button 
           onClick={() => scroll('left')}
-          className="p-3 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
+          className="p-4 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
           aria-label="Прокрутить влево"
         >
           <ArrowLeft 
-            size={20} 
+            size={24} 
             className="text-amber-700 transition-colors"
             aria-hidden="true"
           />
         </button>
         <button 
           onClick={() => scroll('right')}
-          className="p-3 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
+          className="p-4 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
           aria-label="Прокрутить вправо"
         >
           <ArrowRight 
-            size={20} 
+            size={24} 
             className="text-amber-700 transition-colors"
             aria-hidden="true"
           />
         </button>
       </div>
+    </div>
 
-      <div 
-        ref={scrollContainerRef}
-        className="flex overflow-x-auto hide-scrollbar gap-8 pr-0"
-        style={{
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-        }}
-      >
-        {supportItems.map((item, index) => (
-          <motion.div 
-            key={`support-${index}`}
-            variants={fadeInUpVariants}
-            whileHover={{ 
-              y: -8,
-              transition: { duration: 0.2 }
-            }}
-            className="min-w-[320px] h-[480px] flex-shrink-0 bg-[#E1EAD7] dark:bg-neutral-800/80 rounded-2xl p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col hover:shadow-xl transition-all duration-300"
-            style={{ width: 'calc(20% - 1.6rem)' }}
-          >
-            <div className="text-neutral-400 text-lg italic">{item.number}</div>
-            
-            <p className="text-neutral-700 dark:text-neutral-300 text-lg leading-relaxed mt-auto mb-8">
-              {item.title}
-            </p>
+    <div 
+      ref={scrollContainerRef}
+      className="flex overflow-x-auto hide-scrollbar gap-8 pr-0"
+      style={{
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+      }}
+    >
+      {supportItems.map((item, index) => (
+        <motion.div 
+          key={`support-${index}`}
+          variants={fadeInUpVariants}
+          className="min-w-[300px] h-[480px] flex-shrink-0 bg-[#E1EAD7] dark:bg-neutral-800/80 rounded-lg p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col"
+          style={{ width: 'calc(20% - 1.6rem)' }}
+        >
+          <div className="text-neutral-400 text-lg italic">{item.number}</div>
+          
+          <p className="text-neutral-700 dark:text-neutral-300 text-lg leading-relaxed mt-auto mb-8">
+            {item.title}
+          </p>
 
-            <div className="w-full h-[180px] overflow-hidden rounded-xl">
-              <img 
-                src={item.image} 
-                alt={item.title}
-                loading="lazy"
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </motion.div>
-        ))}
-      </div>
+          <div className="w-full h-[180px] overflow-hidden rounded-lg">
+            <img 
+              src={item.image} 
+              alt={item.title}
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+      ))}
     </div>
   </div>
 </section>
