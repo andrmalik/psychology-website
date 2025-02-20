@@ -73,7 +73,7 @@ function Page() {
     { icon: Award, value: '1', label: 'год практики' },
     { icon: BookOpen, value: '100+', label: 'часов консультаций' }
   ];
-
+ 
   const supportItems: SupportItem[] = [
     {
       number: "1",
@@ -737,20 +737,19 @@ function Page() {
   <div className="max-w-7xl mx-auto px-12">
     <div className="flex justify-between items-center mb-32">
       <div>
-      <div className="flex items-baseline gap-4">
-  <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
-    Поддержу
-  </h2>
-  <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
-    в решении трудностей
-  </h2>
-</div>
+        <div className="flex items-baseline gap-4">
+          <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
+            Поддержу
+          </h2>
+          <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
+            в решении трудностей
+          </h2>
+        </div>
         <p className="text-neutral-500 dark:text-neutral-400 mt-4">
           Мысли, которые разрушительно влияют на нас и окружение
         </p>
       </div>
 
-      {/* Кнопки навигации перемещены сюда */}
       <div className="flex gap-4">
         <button 
           onClick={() => scroll('left')}
@@ -779,26 +778,26 @@ function Page() {
 
     <div 
       ref={scrollContainerRef}
-      className="flex overflow-x-auto hide-scrollbar gap-8"
+      className="flex overflow-x-auto hide-scrollbar gap-8 pr-0"
       style={{
         scrollbarWidth: 'none',
         msOverflowStyle: 'none',
       }}
     >
-      {supportItems.slice(0, 4).map((item, index) => (
+      {supportItems.map((item, index) => (
         <motion.div 
           key={`support-${index}`}
           variants={fadeInUpVariants}
-          className="min-w-[280px] h-[400px] flex-shrink-0 bg-white dark:bg-neutral-800 rounded-lg p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col"
-          style={{ width: 'calc(22% - 1rem)' }} // Примерно 4.5 блока будут видны
+          className="min-w-[320px] h-[440px] flex-shrink-0 bg-[#E1EAD7] dark:bg-neutral-800/80 rounded-lg p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col"
+          style={{ width: 'calc(25% - 1rem)' }}
         >
-          <div className="text-neutral-400 text-lg italic mb-auto">{item.number}</div>
+          <div className="text-neutral-400 text-lg italic">{item.number}</div>
           
-          <p className="text-neutral-700 dark:text-neutral-300 text-lg leading-relaxed mb-8">
+          <p className="text-neutral-700 dark:text-neutral-300 text-lg leading-relaxed mt-auto mb-8">
             {item.title}
           </p>
 
-          <div className="w-full h-[120px] overflow-hidden rounded-lg mt-auto">
+          <div className="w-full h-[180px] overflow-hidden rounded-lg">
             <img 
               src={item.image} 
               alt={item.title}
@@ -811,17 +810,18 @@ function Page() {
     </div>
   </div>
 </section>
+
       {/* About Section */}
       <section 
         id="about" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#faf2ef] dark:bg-neutral-900 py-24"
+        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center  bg-white dark:bg-neutral-900 py-24"
         aria-label="Обо мне"
       >
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
           <div>
           <div className="mb-12">
           <h2 className="text-[#544B42] dark:text-white text-5xl font-light inline-block">Меня </h2>{" "}
-<h2 className="text-amber-700 text-5xl font-roslindale mb-2 inline-block">зовут</h2>
+<h2 className="text-amber-700 text-5xl font-roslindale mb-2 inline-block"> зовут</h2>
 <h2 className="text-[#544B42] dark:text-white text-5xl font-light block">Андрей Малик</h2>
 </div>
             
@@ -894,7 +894,7 @@ function Page() {
       {/* Service Formats Section */}
       <section 
         id="service-formats" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
+        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center  bg-white dark:bg-neutral-900 py-24"
         aria-label="Форматы работы"
       >
         <div className="max-w-7xl mx-auto px-12">
@@ -1001,8 +1001,8 @@ function Page() {
             <div className="flex flex-col items-start">
               {/* Brand name */}
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-neutral-800 dark:text-white text-2xl">Андрей</span>
-                <span className="text-amber-700 text-2xl">Малик</span>
+                <span className="text-neutral-800 dark:text-white text-3xl">Андрей</span>
+                <span className="text-amber-700 text-3xl">Малик</span>
               </div>
 
               {/* Tagline */}
