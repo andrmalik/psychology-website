@@ -813,7 +813,7 @@ function Page() {
       {/* About Section */}
       <section 
         id="about" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#E5DDD1] dark:bg-neutral-900 py-24"
+        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#EBE5DB] dark:bg-neutral-900 py-24"
         aria-label="Обо мне"
       >
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
