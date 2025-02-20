@@ -727,14 +727,13 @@ function Page() {
     </div>
   </div>
 </section>
-
 {/* Support Section */}
 <section 
   id="requests" 
   className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
   aria-label="Поддержка"
 >
-  <div className="max-w-7xl mx-auto px-12">
+  <div className="w-full pl-12" style={{ maxWidth: 'calc(100vw - 12rem)' }}>
     <div className="flex justify-between items-center mb-32">
       <div>
         <div className="flex items-baseline gap-4">
@@ -788,8 +787,8 @@ function Page() {
         <motion.div 
           key={`support-${index}`}
           variants={fadeInUpVariants}
-          className="min-w-[320px] h-[440px] flex-shrink-0 bg-[#E1EAD7] dark:bg-neutral-800/80 rounded-lg p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col"
-          style={{ width: 'calc(25% - 1rem)' }}
+          className="min-w-[340px] h-[440px] flex-shrink-0 bg-[#eae3d7] dark:bg-neutral-800/80 rounded-lg p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col"
+          style={{ width: 'calc(20% - 1.6rem)' }}
         >
           <div className="text-neutral-400 text-lg italic">{item.number}</div>
           
@@ -814,7 +813,7 @@ function Page() {
       {/* About Section */}
       <section 
         id="about" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center  bg-white dark:bg-neutral-900 py-24"
+        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-white dark:bg-neutral-900 py-24"
         aria-label="Обо мне"
       >
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
@@ -871,7 +870,7 @@ function Page() {
 
       {/* Statistics Section */}
 <section 
-  className="scroll-mt-[80px] relative z-20 py-24 bg-white dark:bg-neutral-900"
+  className="scroll-mt-[80px] relative z-20 py-24 bg-[#f6f2ec] dark:bg-neutral-900"
   aria-label="Статистика"
 >
   <div className="max-w-7xl mx-auto px-12">
@@ -894,7 +893,7 @@ function Page() {
       {/* Service Formats Section */}
       <section 
         id="service-formats" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center  bg-white dark:bg-neutral-900 py-24"
+        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-white dark:bg-neutral-900 py-24"
         aria-label="Форматы работы"
       >
         <div className="max-w-7xl mx-auto px-12">
