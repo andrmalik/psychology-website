@@ -5,6 +5,7 @@ import { MessageSquare } from 'lucide-react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ArrowLeft, ArrowRight, ArrowUpRight, ArrowUp, Moon, Sun, MessageCircle, Calendar, Star, Award, Users, Brain, BookOpen, Monitor, Heart } from 'lucide-react';import _ from 'lodash';
+import ContactForm from './components/ContactForm';
 
 // Типы
 interface SupportItem {
@@ -813,7 +814,7 @@ function Page() {
       {/* About Section */}
       <section 
         id="about" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#EBE5DB] dark:bg-neutral-900 py-24"
+        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#faf2ef] dark:bg-neutral-900 py-24"
         aria-label="Обо мне"
       >
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
@@ -950,100 +951,42 @@ function Page() {
       </section>
 
       <section 
-  id="contacts" 
+  id="contacts"
   className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
   aria-label="Контакты"
 >
   <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
+    {/* Левая колонка */}
     <div>
-      <img 
-        src="/images/contacts.png" 
-        alt="Контактное изображение" 
+      <img
+        src="/images/contacts.png"
+        alt="Контактное изображение"
         loading="lazy"
-        className="rounded-lg w-[70%] h-auto object-cover" 
+        className="rounded-lg w-[70%] h-auto object-cover"
       />
       <p className="text-neutral-600 dark:text-neutral-400 mt-6 text-lg">
-        Мы можем обсудить любой<br /> {/* Добавлен перенос строки */}
+        Мы можем обсудить любой<br />
         вопрос, который волнует вас
       </p>
     </div>
+
+    {/* Правая колонка */}
     <div>
+      {/* Заголовок и описание */}
       <div className="mb-32 mt-[-150px]">
         <h2 className="text-[#544B42] dark:text-white text-5xl font-light mb-24">
           Начните новую жизнь<br />
           <span className="text-amber-700 font-roslindale">уже сегодня</span>
         </h2>
         <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
-  Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
-</p>
+          Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
+        </p>
       </div>
-      <form 
-        onSubmit={handleFormSubmit}
-        className="space-y-6 mt-12"
-        aria-label="Форма обратной связи"
-      >
-              <div>
-                <input 
-                  type="text" 
-                  name="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Имя" 
-                  className="w-full p-6 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-amber-700/20 transition-all dark:bg-neutral-800 dark:text-white"
-                  aria-label="Ваше имя"
-                  aria-required="true"
-                  aria-invalid={!!formErrors.name}
-                />
-                {formErrors.name && (
-                  <p className="text-red-500 mt-1 text-sm" role="alert">{formErrors.name}</p>
-                )}
-              </div>
-
-              <div>
-                <input 
-                  type="tel" 
-                  name="phone"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  placeholder="+7 (___) ___-__-__" 
-                  className="w-full p-6 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-amber-700/20 transition-all dark:bg-neutral-800 dark:text-white"
-                  aria-label="Ваш телефон"
-                  aria-required="true"
-                  aria-invalid={!!formErrors.phone}
-                />
-                {formErrors.phone && (
-                  <p className="text-red-500 mt-1 text-sm" role="alert">{formErrors.phone}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400">
-                  <input 
-                    type="checkbox" 
-                    name="agreement"
-                    checked={formData.agreement}
-                    onChange={(e) => setFormData({ ...formData, agreement: e.target.checked })}
-                    className="rounded"
-                    aria-label="Согласие на обработку персональных данных"
-                  />
-                  Даю согласие на обработку персональных данных
-                </label>
-                {formErrors.agreement && (
-                  <p className="text-red-500 mt-1 text-sm" role="alert">{formErrors.agreement}</p>
-                )}
-              </div>
-
-              <button 
-  type="submit" 
-  className="w-full py-6 bg-amber-700 text-white rounded-full hover:bg-amber-800 transition-colors text-sm tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
-  disabled={!formData.agreement}
->
-  ОТПРАВИТЬ ЗАЯВКУ
-</button>
-            </form>
-          </div>
-        </div>
-      </section>
+      {/* Форма */}
+      <ContactForm />
+    </div>
+  </div>
+</section>
 
 
       <footer 
