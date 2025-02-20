@@ -518,7 +518,7 @@ function Page() {
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.6 }}
-  className="text-8xl text-white mb-2 font-extralight tracking-wide whitespace-nowrap text-right w-full"
+  className="text-8xl text-white mb-2 font-extralight tracking-wide whitespace-nowrap"
 >
   Студент Психолог
 </motion.h1>
@@ -838,7 +838,7 @@ function Page() {
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
           <div>
           <div className="mb-12">
-          <h2 className="text-[#544B42] dark:text-white text-5xl font-light inline-block">Меня</h2>{" "}
+          <h2 className="text-[#544B42] dark:text-white text-5xl font-light inline-block">Меня </h2>{" "}
 <h2 className="text-amber-700 text-5xl font-roslindale mb-2 inline-block">зовут</h2>
 <h2 className="text-[#544B42] dark:text-white text-5xl font-light block">Андрей Малик</h2>
 </div>
