@@ -733,7 +733,7 @@ function Page() {
   className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
   aria-label="Поддержка"
 >
-  <div className="w-full pl-12" style={{ maxWidth: 'calc(100vw - 12rem)' }}>
+  <div className="w-full pr-0 pl-[max(12rem,calc((100vw-90rem)/2))]">
     <div className="flex justify-between items-center mb-32">
       <div>
         <div className="flex items-baseline gap-4">
@@ -787,7 +787,7 @@ function Page() {
         <motion.div 
           key={`support-${index}`}
           variants={fadeInUpVariants}
-          className="min-w-[340px] h-[440px] flex-shrink-0 bg-[#eae3d7] dark:bg-neutral-800/80 rounded-lg p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col"
+          className="min-w-[300px] h-[480px] flex-shrink-0 bg-[#E1EAD7] dark:bg-neutral-800/80 rounded-lg p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col"
           style={{ width: 'calc(20% - 1.6rem)' }}
         >
           <div className="text-neutral-400 text-lg italic">{item.number}</div>
