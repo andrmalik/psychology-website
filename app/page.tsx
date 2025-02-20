@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { MessageSquare } from 'lucide-react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Moon, Sun, MessageCircle, Calendar, Star, Award, Users, Brain, BookOpen, Monitor, Heart } from 'lucide-react';import _ from 'lodash';
+import { ArrowLeft, ArrowRight, ArrowUpRight, ArrowUp, Moon, Sun, MessageCircle, Calendar, Star, Award, Users, Brain, BookOpen, Monitor, Heart } from 'lucide-react';import _ from 'lodash';
 
 // Типы
 interface SupportItem {
@@ -106,26 +106,7 @@ function Page() {
     }
   ];
 
-  const testimonials: Testimonial[] = [
-    {
-      name: "Анна, 28 лет",
-      text: "Спасибо за помощь в преодолении тревожности. Наши сессии действительно изменили мою жизнь к лучшему.",
-      rating: 5,
-      image: "/images/testimonial1.jpg"
-    },
-    {
-      name: "Михаил, 32 года",
-      text: "Профессиональный подход и внимательное отношение. Помогли разобраться с проблемами в отношениях.",
-      rating: 5,
-      image: "/images/testimonial2.jpg"
-    },
-    {
-      name: "Елена, 25 лет",
-      text: "Очень комфортная атмосфера на сессиях. Научилась лучше понимать себя и свои потребности.",
-      rating: 5,
-      image: "/images/testimonial3.jpg"
-    }
-  ];
+
 
   // Validation
   const validateForm = (): boolean => {
@@ -665,7 +646,7 @@ function Page() {
                 className="text-center"
               >
                 <stat.icon className="w-12 h-12 mx-auto mb-4 text-amber-700" aria-hidden="true" />
-                <div className="text-4xl font-bold mb-2 dark:text-white">{stat.value}</div>
+                <div className="text-neutral-800 dark:text-white text-5xl font-light">{stat.value}</div>
                 <div className="text-neutral-600 dark:text-neutral-400">{stat.label}</div>
               </motion.div>
             ))}
@@ -909,49 +890,7 @@ function Page() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUpVariants}
-        className="scroll-mt-[80px] relative z-20 py-24 bg-[#f6f2ec] dark:bg-neutral-900"
-        aria-label="Отзывы"
-      >
-        <div className="max-w-7xl mx-auto px-12">
-          <h2 className="text-4xl text-center mb-12 text-neutral-800 dark:text-white">Отзывы клиентов</h2>
-          <div className="grid grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={`testimonial-${index}`}
-                whileHover={{ y: -5 }}
-                className="p-6 rounded-2xl bg-white dark:bg-neutral-800"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <img
-                    src={testimonial.image}
-                    alt={`Фото ${testimonial.name}`}
-                    loading="lazy"
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <div className="font-medium text-neutral-800 dark:text-white">{testimonial.name}</div>
-                    <div 
-                      className="flex text-amber-700" 
-                      aria-label={`Оценка: ${testimonial.rating} из 5`}
-                    >
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} size={16} fill="currentColor" aria-hidden="true" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-neutral-600 dark:text-neutral-400">{testimonial.text}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
+
 
       {/* Service Formats Section */}
       <section 
@@ -1108,71 +1047,69 @@ function Page() {
         </div>
       </section>
 
-    
-    <footer 
-  className="relative z-20 bg-[#f6f2ec] dark:bg-neutral-900 border-t-2 border-neutral-100 dark:border-neutral-700 py-12"
-  role="contentinfo"
->
-  <div className="max-w-7xl mx-auto px-12">
-    <div className="flex flex-col items-center">
-      {/* Brand name */}
-      <div className="flex items-center gap-2 mb-4">
-        <span className="text-neutral-800 dark:text-white text-2xl">Андрей</span>
-        <span className="text-amber-700 text-2xl">Малик</span>
+
+      <footer 
+      className="relative z-20 bg-[#f6f2ec] dark:bg-neutral-900 border-t-[10px] border-neutral-100 dark:border-neutral-700 py-12"
+      role="contentinfo"
+    >
+      <div className="max-w-7xl mx-auto px-12">
+        <div className="flex flex-col">
+          {/* Top section with brand and navigation */}
+          <div className="flex justify-between items-start mb-12">
+            {/* Left - Brand section */}
+            <div className="flex flex-col items-start">
+              {/* Brand name */}
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-neutral-800 dark:text-white text-2xl">Андрей</span>
+                <span className="text-amber-700 text-2xl">Малик</span>
+              </div>
+
+              {/* Tagline */}
+              <p className="text-neutral-600 dark:text-neutral-400">Место для безопасного диалога</p>
+            </div>
+
+            {/* Center - Navigation links in 2 columns */}
+            <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm tracking-wide">
+              <a href="#requests" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
+                ЗАПРОСЫ ДЛЯ РАБОТЫ
+              </a>
+              <a href="#skills" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
+                УСЛУГИ
+              </a>
+              <a href="#about" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
+                ОБО МНЕ
+              </a>
+              <a href="#contacts" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
+                КОНТАКТЫ
+              </a>
+            </div>
+
+            {/* Right - Scroll to top button */}
+            <button 
+              onClick={() => scrollToSection('skills')}
+              className="p-4 rounded-full bg-amber-700 hover:bg-amber-800 transition-colors group"
+              aria-label="Перейти к услугам"
+            >
+              <ArrowUp 
+                size={24} 
+                className="text-white group-hover:-translate-y-1 transition-transform" 
+              />
+            </button>
+          </div>
+
+          {/* Bottom section - Centered phone number */}
+          <div className="text-center">
+            <a 
+              href="tel:+97253861117" 
+              className="text-4xl text-neutral-600 dark:text-white hover:text-amber-700 dark:hover:text-amber-700 transition-colors inline-block"
+              aria-label="Телефон для Израиля"
+            >
+              +972 (53) 861-1117
+            </a>
+          </div>
+        </div>
       </div>
-
-      {/* Tagline */}
-      <p className="text-neutral-600 dark:text-neutral-400 mb-12">Место для безопасного диалога</p>
-
-      {/* Navigation links */}
-      <div className="flex gap-12 text-sm tracking-wide mb-12">
-        <a href="#requests" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
-          ЗАПРОСЫ ДЛЯ РАБОТЫ
-        </a>
-        <a href="#skills" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
-          УСЛУГИ
-        </a>
-        <a href="#about" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
-          ОБО МНЕ
-        </a>
-        <a href="#contacts" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
-          КОНТАКТЫ
-        </a>
-      </div>
-
-      {/* Social and Contact */}
-      <div className="flex items-center gap-8 mb-8">
-        <a 
-          href="https://t.me/your_username" 
-          className="text-neutral-600 dark:text-neutral-400 hover:text-amber-700 dark:hover:text-amber-700 transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <MessageCircle size={24} />
-        </a>
-        <a 
-          href="https://wa.me/your_number" 
-          className="text-neutral-600 dark:text-neutral-400 hover:text-amber-700 dark:hover:text-amber-700 transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <MessageSquare size={24} />
-        </a>
-      </div>
-
-{/* Phone numbers */}
-<div className="text-center">
-  <a 
-    href="tel:+97253861117" 
-    className="text-4xl text-neutral-600 dark:text-white hover:text-amber-700 dark:hover:text-amber-700 transition-colors block"
-    aria-label="Телефон для Израиля"
-  >
-    +972 (53) 861-1117
-  </a>
-</div>
-    </div>
-  </div>
-</footer>
+    </footer>
     </div>
   );
 }
