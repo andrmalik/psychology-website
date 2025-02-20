@@ -494,7 +494,7 @@ function Page() {
     <div className="absolute inset-0 bg-black/30" />
   </motion.div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-12 w-1/2 text-right pb-48 ml-auto">
+  <div className="relative z-10 max-w-7xl mx-auto px-12 w-1/2 text-right pb-48 ml-auto translate-x-[120px]">
     <div className="flex gap-4 mb-12 justify-end">
       <motion.span 
         initial={{ opacity: 0, y: 20 }}
@@ -628,6 +628,7 @@ function Page() {
             ))}
           </div>
         </div>
+        </section>
 
 
       {/* Problems Section */}
@@ -867,7 +868,7 @@ function Page() {
       </section>
 
 
-      </section>{/* Statistics Section */}
+      {/* Statistics Section */}
 <section 
   className="scroll-mt-[80px] relative z-20 py-24 bg-white dark:bg-neutral-900"
   aria-label="Статистика"
@@ -886,7 +887,8 @@ function Page() {
       ))}
     </div>
   </div>
-</section>
+  </section>
+
 
       {/* Service Formats Section */}
       <section 
