@@ -494,7 +494,7 @@ function Page() {
     <div className="absolute inset-0 bg-black/30" />
   </motion.div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-12 w-1/2 text-right pb-48 ml-auto translate-x-[120px]">
+  <div className="relative z-10 max-w-7xl mx-auto px-12 w-1/2 text-right pb-48 ml-auto translate-x-[360px]">
     <div className="flex gap-4 mb-12 justify-end">
       <motion.span 
         initial={{ opacity: 0, y: 20 }}
@@ -813,7 +813,7 @@ function Page() {
       {/* About Section */}
       <section 
         id="about" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f5dfbd] dark:bg-neutral-900 py-24"
+        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#DFD5C7] dark:bg-neutral-900 py-24"
         aria-label="Обо мне"
       >
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
