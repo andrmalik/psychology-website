@@ -153,14 +153,25 @@ function Page() {
     const element = document.getElementById(elementId);
     if (!element) return;
   
+    // Получаем высоту навигации
     const navHeight = document.querySelector('nav')?.offsetHeight || 0;
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+    const offsetPosition = element.offsetTop - navHeight;
   
+    // Устанавливаем временно более медленный scroll-behavior через CSS
+    document.documentElement.style.setProperty('scroll-behavior', 'smooth');
+    
+    // Делаем скролл
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth'  // Только это свойство доступно
+      
     });
+
+  
+    // Добавляем таймер для сброса scroll-behavior
+    setTimeout(() => {
+      document.documentElement.style.removeProperty('scroll-behavior');
+    }, 2000);
+  
   }, []);
 
   const handleNavClick = useCallback((
@@ -371,6 +382,10 @@ function Page() {
         .hide-scrollbar {
           -ms-overflow-style: none;
           scrollbar-width: none;
+        }
+        html {
+          scroll-behavior: smooth;
+          transition: scroll-position 2s cubic-bezier(0.4, 0, 0.2, 1);
         }
       `}</style>
 
@@ -726,146 +741,179 @@ function Page() {
       </div>
     </div>
   </div>
-</section>
-{/* Support Section */}
+</section>{/* Support Section */}
 <section 
   id="requests" 
   className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
   aria-label="Поддержка"
 >
   <div className="w-full pr-0 pl-[max(12rem,calc((100vw-90rem)/2))]">
-    <div className="flex justify-between items-center mb-32">
-      <div>
-        <div className="flex items-baseline gap-4">
-          <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
-            Поддержу
-          </h2>
-          <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
-            в решении трудностей
-          </h2>
-        </div>
-        <p className="text-neutral-500 dark:text-neutral-400 mt-4">
-          Мысли, которые разрушительно влияют на нас и окружение
-        </p>
+    <div className="flex justify-between items-start mb-32">
+      <div className="flex items-baseline gap-4">
+        <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
+          Поддержу
+        </h2>
+        <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
+          в решении трудностей
+        </h2>
       </div>
 
-      <div className="flex gap-4">
+      <p className="text-neutral-500 dark:text-neutral-400 mt-4 max-w-md text-right mr-24">
+        Мысли, которые разрушительно влияют на нас<br/> и окружение
+      </p>
+    </div>
+
+    <div className="relative">
+      <div className="absolute -top-20 left-0 flex gap-3">
         <button 
           onClick={() => scroll('left')}
-          className="p-4 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
+          className="p-3 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
           aria-label="Прокрутить влево"
         >
           <ArrowLeft 
-            size={24} 
+            size={20} 
             className="text-amber-700 transition-colors"
             aria-hidden="true"
           />
         </button>
         <button 
           onClick={() => scroll('right')}
-          className="p-4 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
+          className="p-3 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
           aria-label="Прокрутить вправо"
         >
           <ArrowRight 
-            size={24} 
+            size={20} 
             className="text-amber-700 transition-colors"
             aria-hidden="true"
           />
         </button>
       </div>
+
+      <div 
+        ref={scrollContainerRef}
+        className="flex overflow-x-auto hide-scrollbar gap-8 pr-0"
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
+        {supportItems.map((item, index) => (
+          <motion.div 
+            key={`support-${index}`}
+            variants={fadeInUpVariants}
+            whileHover={{ 
+              y: -8,
+              transition: { duration: 0.2 }
+            }}
+            className="min-w-[320px] h-[480px] flex-shrink-0 bg-[#E1EAD7] dark:bg-neutral-800/80 rounded-2xl p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col hover:shadow-xl transition-all duration-300"
+            style={{ width: 'calc(20% - 1.6rem)' }}
+          >
+            <div className="text-neutral-400 text-lg italic">{item.number}</div>
+            
+            <p className="text-neutral-700 dark:text-neutral-300 text-lg leading-relaxed mt-auto mb-8">
+              {item.title}
+            </p>
+
+            <div className="w-full h-[180px] overflow-hidden rounded-xl">
+              <img 
+                src={item.image} 
+                alt={item.title}
+                loading="lazy"
+                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>{/* Support Section */}
+<section 
+  id="requests" 
+  className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-[#f6f2ec] dark:bg-neutral-900 py-24"
+  aria-label="Поддержка"
+>
+  <div className="w-full pr-0 pl-[max(12rem,calc((100vw-90rem)/2))]">
+    <div className="flex justify-between items-start mb-32">
+      <div className="flex items-baseline gap-4">
+        <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
+          Поддержу
+        </h2>
+        <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
+          в решении трудностей
+        </h2>
+      </div>
+
+      <p className="text-neutral-500 dark:text-neutral-400 mt-4 max-w-md text-right mr-24">
+        Мысли, которые разрушительно влияют на нас<br/> и окружение
+      </p>
     </div>
 
-    <div 
-      ref={scrollContainerRef}
-      className="flex overflow-x-auto hide-scrollbar gap-8 pr-0"
-      style={{
-        scrollbarWidth: 'none',
-        msOverflowStyle: 'none',
-      }}
-    >
-      {supportItems.map((item, index) => (
-        <motion.div 
-          key={`support-${index}`}
-          variants={fadeInUpVariants}
-          className="min-w-[300px] h-[480px] flex-shrink-0 bg-[#E1EAD7] dark:bg-neutral-800/80 rounded-lg p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col"
-          style={{ width: 'calc(20% - 1.6rem)' }}
+    <div className="relative">
+      <div className="absolute -top-20 left-0 flex gap-3">
+        <button 
+          onClick={() => scroll('left')}
+          className="p-3 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
+          aria-label="Прокрутить влево"
         >
-          <div className="text-neutral-400 text-lg italic">{item.number}</div>
-          
-          <p className="text-neutral-700 dark:text-neutral-300 text-lg leading-relaxed mt-auto mb-8">
-            {item.title}
-          </p>
+          <ArrowLeft 
+            size={20} 
+            className="text-amber-700 transition-colors"
+            aria-hidden="true"
+          />
+        </button>
+        <button 
+          onClick={() => scroll('right')}
+          className="p-3 rounded-full bg-white dark:bg-neutral-800 border-2 border-amber-700 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group"
+          aria-label="Прокрутить вправо"
+        >
+          <ArrowRight 
+            size={20} 
+            className="text-amber-700 transition-colors"
+            aria-hidden="true"
+          />
+        </button>
+      </div>
 
-          <div className="w-full h-[180px] overflow-hidden rounded-lg">
-            <img 
-              src={item.image} 
-              alt={item.title}
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </motion.div>
-      ))}
+      <div 
+        ref={scrollContainerRef}
+        className="flex overflow-x-auto hide-scrollbar gap-8 pr-0"
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
+        {supportItems.map((item, index) => (
+          <motion.div 
+            key={`support-${index}`}
+            variants={fadeInUpVariants}
+            whileHover={{ 
+              y: -8,
+              transition: { duration: 0.2 }
+            }}
+            className="min-w-[320px] h-[480px] flex-shrink-0 bg-[#E1EAD7] dark:bg-neutral-800/80 rounded-2xl p-6 border border-neutral-200 dark:border-neutral-700 flex flex-col hover:shadow-xl transition-all duration-300"
+            style={{ width: 'calc(20% - 1.6rem)' }}
+          >
+            <div className="text-neutral-400 text-lg italic">{item.number}</div>
+            
+            <p className="text-neutral-700 dark:text-neutral-300 text-lg leading-relaxed mt-auto mb-8">
+              {item.title}
+            </p>
+
+            <div className="w-full h-[180px] overflow-hidden rounded-xl">
+              <img 
+                src={item.image} 
+                alt={item.title}
+                loading="lazy"
+                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
-
-      {/* About Section */}
-      <section 
-        id="about" 
-        className="scroll-mt-[80px] relative z-20 min-h-screen flex items-center bg-white dark:bg-neutral-900 py-24"
-        aria-label="Обо мне"
-      >
-        <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
-          <div>
-          <div className="mb-12">
-          <h2 className="text-[#544B42] dark:text-white text-5xl font-light inline-block">Меня </h2>{" "}
-<h2 className="text-amber-700 text-5xl font-roslindale mb-2 inline-block"> зовут</h2>
-<h2 className="text-[#544B42] dark:text-white text-5xl font-light block">Андрей Малик</h2>
-</div>
-            
-            <div className="grid gap-12">
-              {[
-                {
-                  number: "01",
-                  text: "Психолог-студент, Эмоционально-Образный терапевт, КПТ терапевт"
-                },
-                {
-                  number: "02",
-                  text: "Обучалаюсь в МИП и в Институте ЭОТ"
-                },
-                {
-                  number: "03",
-                  text: "Регулярно прохожу супервизию и личную терапию"
-                },
-                {
-                  number: "04",
-                  text: "Моя миссия в работе — быть рядом и поддерживать вас на новом пути"
-                }
-              ].map((item, index) => (
-                <motion.div
-                  key={`about-${index}`}
-                  whileHover={{ x: 10 }}
-                  className="group"
-                >
-                  <h3 className="text-neutral-400 mb-4" aria-hidden="true">{item.number}</h3>
-                  <p className="text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-800 dark:group-hover:text-white transition-colors">
-                    {item.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <img
-              src="/images/ps.png"
-              alt="Профессиональный портрет"
-              loading="lazy"
-              className="rounded-lg w-full h-auto object-cover"
-            />
-          </div>
-        </div>
-      </section>
 
 
       {/* Statistics Section */}
@@ -930,7 +978,7 @@ function Page() {
               <motion.div 
                 key={`service-${index}`}
                 whileHover={{ y: -5 }}
-                className="bg-white dark:bg-neutral-800 p-8 rounded-2xl"
+                className="bg-[#f6f2ec] dark:bg-neutral-800 p-8 rounded-2xl"
               >
                 <div className="text-amber-700 mb-6">
                   <service.icon size={32} aria-hidden="true" />
@@ -961,8 +1009,8 @@ function Page() {
         src="/images/contacts.png"
         alt="Контактное изображение"
         loading="lazy"
-        className="rounded-lg w-[70%] h-auto object-cover"
-      />
+        className="rounded-lg w-[85%] h-auto object-cover mt-24" // Было w-[70%], добавили mt-24
+        />
       <p className="text-neutral-600 dark:text-neutral-400 mt-6 text-lg">
         Мы можем обсудить любой<br />
         вопрос, который волнует вас
