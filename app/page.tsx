@@ -745,7 +745,7 @@ function Page() {
   aria-label="Поддержка"
 >
   <div className="w-full pr-0 pl-[max(12rem,calc((100vw-90rem)/2))]">
-    <div className="flex justify-between items-start mb-32">
+    <div className="flex justify-between items-start mb-12">
       <div className="flex items-baseline gap-4">
         <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
           Поддержу
@@ -884,26 +884,31 @@ function Page() {
       </section>
 
 
-      {/* Statistics Section */}
+{/* Statistics Section */}
 <section 
-  className="scroll-mt-[80px] relative z-20 py-24 bg-[#f6f2ec] dark:bg-neutral-900"
+  className="scroll-mt-[80px] relative z-20 py-24 bg-white dark:bg-neutral-900" // Изменили фон на white
   aria-label="Статистика"
 >
   <div className="max-w-7xl mx-auto px-12">
     <div className="grid grid-cols-4 gap-8">
       {stats.map((stat, index) => (
-        <div 
-          key={`stat-${stat.value}-${index}`}
-          className="text-center"
-        >
+        <div key={`stat-${stat.value}-${index}`} className="relative text-center">
           <stat.icon className="w-12 h-12 mx-auto mb-4 text-amber-700" aria-hidden="true" />
           <div className="text-neutral-800 dark:text-white text-5xl font-light">{stat.value}</div>
           <div className="text-neutral-600 dark:text-neutral-400">{stat.label}</div>
+          
+          {/* Добавляем разделитель после каждого блока, кроме последнего */}
+          {index < stats.length - 1 && (
+            <div 
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-16 bg-gradient-to-b from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"
+              aria-hidden="true"
+            />
+          )}
         </div>
       ))}
     </div>
   </div>
-  </section>
+</section>
 
 
       {/* Service Formats Section */}
@@ -1057,18 +1062,18 @@ function Page() {
   </a>
 </div>
 
-            {/* Right - Scroll to top button */}
-            <button 
-              onClick={() => scrollToSection('skills')}
-              className="p-4 rounded-full bg-amber-700 hover:bg-amber-800 transition-colors group"
-              aria-label="Перейти к услугам"
-            >
-              <ArrowUp 
-                size={24} 
-                className="text-white group-hover:-translate-y-1 transition-transform" 
-              />
-            </button>
-          </div>
+{/* Right - Scroll to top button */}
+<button 
+  onClick={() => scrollToSection('skills')}
+  className="p-4 rounded-full bg-amber-700 hover:bg-amber-800 transition-colors group"
+  aria-label="Перейти к услугам"
+>
+  <ArrowUp 
+    size={24} 
+    className="text-white group-hover:-translate-y-1 transition-transform" 
+  />
+</button>
+
 
           {/* Bottom section - Centered phone number */}
           <div className="text-center">
