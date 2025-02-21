@@ -20,31 +20,18 @@ const nextConfig = {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
           },
-          // Добавляем для мобильных устройств
-          {
-            key: 'Viewport-Fit',
-            value: 'cover'
-          }
         ],
       },
     ]
   },
-  // Добавляем важные настройки
-  reactStrictMode: true,
-  swcMinify: true,
   // Оптимизация изображений
   images: {
-    domains: ['localhost'], // Добавьте ваши домены
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    domains: ['localhost'],
   },
-  // Оптимизация для мобильных
+  // Только поддерживаемые экспериментальные функции
   experimental: {
-    optimizeCss: true, // Оптимизация CSS
-    scrollRestoration: true, // Улучшенная прокрутка
+    scrollRestoration: true,
   },
-  // Компрессия
-  compress: true,
 }
 
 module.exports = nextConfig
