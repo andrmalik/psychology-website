@@ -1025,20 +1025,37 @@ function Page() {
             </div>
 
             {/* Center - Navigation links in 2 columns */}
-            <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm tracking-wide">
-              <a href="#requests" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
-                ЗАПРОСЫ ДЛЯ РАБОТЫ
-              </a>
-              <a href="#skills" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
-                УСЛУГИ
-              </a>
-              <a href="#about" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
-                ОБО МНЕ
-              </a>
-              <a href="#contacts" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors">
-                КОНТАКТЫ
-              </a>
-            </div>
+{/* Center - Navigation links in 2 columns */}
+<div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm tracking-wide">
+  <a 
+    href="#requests" 
+    onClick={(e) => handleNavClick(e, 'requests')}
+    className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors"
+  >
+    ЗАПРОСЫ ДЛЯ РАБОТЫ
+  </a>
+  <a 
+    href="#skills" 
+    onClick={(e) => handleNavClick(e, 'skills')}
+    className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors"
+  >
+    УСЛУГИ
+  </a>
+  <a 
+    href="#about" 
+    onClick={(e) => handleNavClick(e, 'about')}
+    className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors"
+  >
+    ОБО МНЕ
+  </a>
+  <a 
+    href="#contacts" 
+    onClick={(e) => handleNavClick(e, 'contacts')}
+    className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors"
+  >
+    КОНТАКТЫ
+  </a>
+</div>
 
             {/* Right - Scroll to top button */}
             <button 
