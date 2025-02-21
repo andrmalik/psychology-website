@@ -745,7 +745,7 @@ function Page() {
   aria-label="Поддержка"
 >
   <div className="w-full pr-0 pl-[max(12rem,calc((100vw-90rem)/2))]">
-    <div className="flex justify-between items-start mb-12">
+    <div className="flex justify-between items-start mb-45">
       <div className="flex items-baseline gap-4">
         <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
           Поддержу
