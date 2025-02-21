@@ -6,7 +6,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true
   },
-  // Добавляем настройки для заголовка
   async headers() {
     return [
       {
@@ -23,14 +22,6 @@ const nextConfig = {
         ],
       },
     ]
-  },
-  // Оптимизация изображений
-  images: {
-    domains: ['localhost'],
-  },
-  // Только поддерживаемые экспериментальные функции
-  experimental: {
-    scrollRestoration: true,
   },
 }
 

@@ -6,10 +6,17 @@ import dynamic from 'next/dynamic';
 import _ from 'lodash';
 
 // Динамический импорт компонентов
-const MobilePage = dynamic(() => import('./MobilePage'), { ssr: false });
-const DesktopPage = dynamic(() => import('./DesktopPage'), { ssr: false });
+const MobilePage = dynamic(() => import('./MobilePage'), { 
+  ssr: false,
+  loading: () => <div>Loading...</div>
+});
 
-// Типы данных для лучшей типизации
+const DesktopPage = dynamic(() => import('./DesktopPage'), { 
+  ssr: false,
+  loading: () => <div>Loading...</div>
+});
+
+// Типы данных
 interface SupportItem {
   number: string;
   title: string;
@@ -18,7 +25,7 @@ interface SupportItem {
 
 interface Category {
   title: string;
-  icon: any; // Можно уточнить тип иконки
+  icon: any;
   gradient: string;
   darkGradient: string;
   borderColor: string;
@@ -27,32 +34,37 @@ interface Category {
 }
 
 interface Stat {
-  icon: any; // Можно уточнить тип иконки
+  icon: any;
   value: string;
   label: string;
 }
 
 const Page = () => {
-
-
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // Единый useEffect для определения мобильного устройства
   useEffect(() => {
     setMounted(true);
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
     
+    const handleResize = _.debounce(() => {
+      if (typeof window !== 'undefined') {
+        setIsMobile(window.innerWidth < 768);
+      }
+    }, 100);
+
     // Первоначальная проверка
-    checkMobile();
-    
-    // Добавляем слушатель
-    window.addEventListener('resize', _.debounce(checkMobile, 100));
+    handleResize();
+
+    // Слушатели событий
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
 
     return () => {
-      window.removeEventListener('resize', _.debounce(checkMobile, 100));
+      handleResize.cancel();
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
     };
   }, []);
 
@@ -60,6 +72,7 @@ const Page = () => {
   if (!mounted) {
     return null;
   }
+
   // Общие данные
   const supportItems: SupportItem[] = [
     {
@@ -176,23 +189,27 @@ const Page = () => {
       window.removeEventListener('resize', debouncedCheck);
     };
   }, []);
-  
-  return isMobile ? (
-    <MobilePage
-      supportItems={supportItems}
-      categories={categories}
-      stats={stats}
-      isDarkMode={isDarkMode}
-      setIsDarkMode={setIsDarkMode}
-    />
-  ) : (
-    <DesktopPage
-      supportItems={supportItems}
-      categories={categories}
-      stats={stats}
-      isDarkMode={isDarkMode}
-      setIsDarkMode={setIsDarkMode}
-    />
+
+  return (
+    <div className="min-h-screen">
+      {isMobile ? (
+        <MobilePage
+          supportItems={supportItems}
+          categories={categories}
+          stats={stats}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+        />
+      ) : (
+        <DesktopPage
+          supportItems={supportItems}
+          categories={categories}
+          stats={stats}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+        />
+      )}
+    </div>
   );
 };
 
