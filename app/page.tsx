@@ -1062,7 +1062,8 @@ function Page() {
   </a>
 </div>
 
-{/* Right - Scroll to top button */}
+            {/* Right - Scroll to top button */}
+
 <button 
   onClick={() => scrollToSection('skills')}
   className="p-4 rounded-full bg-amber-700 hover:bg-amber-800 transition-colors group"
@@ -1073,7 +1074,7 @@ function Page() {
     className="text-white group-hover:-translate-y-1 transition-transform" 
   />
 </button>
-
+          </div>
 
           {/* Bottom section - Centered phone number */}
           <div className="text-center">
