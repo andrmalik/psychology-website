@@ -2,21 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { Monitor, Users, Heart, Brain, Star, Award, BookOpen } from 'lucide-react';
-import dynamic from 'next/dynamic';
-import _ from 'lodash';
+import MobilePage from './MobilePage';
+import DesktopPage from './DesktopPage';
 
-// Динамический импорт компонентов
-const MobilePage = dynamic(() => import('./MobilePage'), { 
-  ssr: false,
-  loading: () => <div>Loading...</div>
-});
-
-const DesktopPage = dynamic(() => import('./DesktopPage'), { 
-  ssr: false,
-  loading: () => <div>Loading...</div>
-});
-
-// Типы данных
+// Типы данных остаются те же
 interface SupportItem {
   number: string;
   title: string;
@@ -40,40 +29,22 @@ interface Stat {
 }
 
 const Page = () => {
-  const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Единый useEffect для определения мобильного устройства
   useEffect(() => {
-    setMounted(true);
+    function handleResize() {
+      setIsMobile(window.innerWidth < 768);
+    }
     
-    const handleResize = _.debounce(() => {
-      if (typeof window !== 'undefined') {
-        setIsMobile(window.innerWidth < 768);
-      }
-    }, 100);
-
-    // Первоначальная проверка
+    // Первичная проверка
     handleResize();
 
-    // Слушатели событий
     window.addEventListener('resize', handleResize);
-    window.addEventListener('orientationchange', handleResize);
-
-    return () => {
-      handleResize.cancel();
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('orientationchange', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Не рендерим до монтирования
-  if (!mounted) {
-    return null;
-  }
-
-  // Общие данные
+  // Данные остаются те же
   const supportItems: SupportItem[] = [
     {
       number: "1",
@@ -171,24 +142,6 @@ const Page = () => {
     { icon: Award, value: '1', label: 'год практики' },
     { icon: BookOpen, value: '100+', label: 'часов консультаций' }
   ];
-
-  // Определение мобильного устройства
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    // Вызываем сразу при монтировании
-    checkMobile();
-
-    // Добавляем слушатель с debounce для оптимизации
-    const debouncedCheck = _.debounce(checkMobile, 100);
-    window.addEventListener('resize', debouncedCheck);
-
-    return () => {
-      window.removeEventListener('resize', debouncedCheck);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen">
