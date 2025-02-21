@@ -900,7 +900,7 @@ function Page() {
           {/* Добавляем разделитель после каждого блока, кроме последнего */}
           {index < stats.length - 1 && (
             <div 
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-16 bg-gradient-to-b from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-24 bg-gradient-to-b from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"
               aria-hidden="true"
             />
           )}
