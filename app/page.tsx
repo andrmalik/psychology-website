@@ -886,9 +886,14 @@ function Page() {
 
 {/* Statistics Section */}
 <section 
-  className="scroll-mt-[80px] relative z-20 py-24 bg-white dark:bg-neutral-900" // Изменили фон на white
+  className="scroll-mt-[80px] relative z-20 py-24 bg-white dark:bg-neutral-900"
   aria-label="Статистика"
 >
+  {/* Верхний горизонтальный разделитель */}
+  <div className="absolute top-0 left-0 right-0 h-[1px] mx-12">
+    <div className="w-full h-full bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-700 to-transparent" />
+  </div>
+
   <div className="max-w-7xl mx-auto px-12">
     <div className="grid grid-cols-4 gap-8">
       {stats.map((stat, index) => (
@@ -897,7 +902,6 @@ function Page() {
           <div className="text-neutral-800 dark:text-white text-5xl font-light">{stat.value}</div>
           <div className="text-neutral-600 dark:text-neutral-400">{stat.label}</div>
           
-          {/* Добавляем разделитель после каждого блока, кроме последнего */}
           {index < stats.length - 1 && (
             <div 
               className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-24 bg-gradient-to-b from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"
@@ -907,6 +911,11 @@ function Page() {
         </div>
       ))}
     </div>
+  </div>
+
+  {/* Нижний горизонтальный разделитель */}
+  <div className="absolute bottom-0 left-0 right-0 h-[1px] mx-12">
+    <div className="w-full h-full bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-700 to-transparent" />
   </div>
 </section>
 
