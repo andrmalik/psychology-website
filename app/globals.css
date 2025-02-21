@@ -49,3 +49,9 @@ html {
     transition-duration: 800ms;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}

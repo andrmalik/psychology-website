@@ -1,10 +1,13 @@
-'use client'
+'use client';
 
 import React, { useState, useEffect } from 'react';
-import _ from 'lodash';
 import { Monitor, Users, Heart, Brain, Star, Award, BookOpen } from 'lucide-react';
-import MobilePage from './MobilePage';
-import DesktopPage from './DesktopPage';
+import dynamic from 'next/dynamic';
+import _ from 'lodash';
+
+// Динамический импорт компонентов
+const MobilePage = dynamic(() => import('./MobilePage'), { ssr: false });
+const DesktopPage = dynamic(() => import('./DesktopPage'), { ssr: false });
 
 // Типы данных для лучшей типизации
 interface SupportItem {
@@ -30,8 +33,33 @@ interface Stat {
 }
 
 const Page = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+
+
+  const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Первоначальная проверка
+    checkMobile();
+    
+    // Добавляем слушатель
+    window.addEventListener('resize', _.debounce(checkMobile, 100));
+
+    return () => {
+      window.removeEventListener('resize', _.debounce(checkMobile, 100));
+    };
+  }, []);
+
+  // Не рендерим до монтирования
+  if (!mounted) {
+    return null;
+  }
   // Общие данные
   const supportItems: SupportItem[] = [
     {
@@ -148,7 +176,7 @@ const Page = () => {
       window.removeEventListener('resize', debouncedCheck);
     };
   }, []);
-
+  
   return isMobile ? (
     <MobilePage
       supportItems={supportItems}
