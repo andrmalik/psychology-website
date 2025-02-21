@@ -890,7 +890,7 @@ function Page() {
   aria-label="Статистика"
 >
   {/* Верхний горизонтальный разделитель */}
-  <div className="absolute top-0 left-0 right-0 h-[1px] mx-12">
+  <div className="absolute top-0 left-0 right-0 h-[2px] mx-12">
     <div className="w-full h-full bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-700 to-transparent" />
   </div>
 
@@ -904,7 +904,7 @@ function Page() {
           
           {index < stats.length - 1 && (
             <div 
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-24 bg-gradient-to-b from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-36 bg-gradient-to-b from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"
               aria-hidden="true"
             />
           )}
@@ -914,7 +914,7 @@ function Page() {
   </div>
 
   {/* Нижний горизонтальный разделитель */}
-  <div className="absolute bottom-0 left-0 right-0 h-[1px] mx-12">
+  <div className="absolute bottom-0 left-0 right-0 h-[2px] mx-12">
     <div className="w-full h-full bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-700 to-transparent" />
   </div>
 </section>
