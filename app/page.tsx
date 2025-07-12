@@ -73,7 +73,11 @@ function Page() {
     { icon: Award, value: '1', label: 'год практики' },
     { icon: BookOpen, value: '100+', label: 'часов консультаций' }
   ];
- 
+  interface SupportItem {
+    number: string;
+    title: string;
+    image: string;
+  }
   const supportItems: SupportItem[] = [
     {
       number: "1",
@@ -531,7 +535,7 @@ function Page() {
   transition={{ delay: 0.6 }}
   className="text-7xl text-white mb-2 font-extralight tracking-wide whitespace-nowrap"
 >
-  Студент Психолог
+  Клинический Психолог
 </motion.h1>
 
     <motion.h1
@@ -844,11 +848,11 @@ function Page() {
               {[
                 {
                   number: "01",
-                  text: "Психолог-студент, Эмоционально-Образный терапевт, КПТ терапевт"
+                  text: "Эмоционально-Образный терапевт, Когнитивно поведенческий терапевт"
                 },
                 {
                   number: "02",
-                  text: "Обучалаюсь в МИП и в Институте ЭОТ"
+                  text: "Окончил Московский Институт Психоанализа (МИП) и Институт ЭОТ"
                 },
                 {
                   number: "03",
@@ -856,6 +860,10 @@ function Page() {
                 },
                 {
                   number: "04",
+                  text: "Постоянно повышаю свою квалификацию на професиональных курсах"
+                },
+                {
+                  number: "05",
                   text: "Моя миссия в работе — быть рядом и поддерживать вас на новом пути"
                 }
               ].map((item, index) => (
@@ -939,14 +947,14 @@ function Page() {
                 icon: Users,
                 title: "Индивидуальная терапия",
                 description: "Персональные сессии для глубокой проработки личных запросов и достижения ваших целей",
-                price: "от 1000 рублей",
+                price: "от 2000 рублей",
                 duration: "75 минут"
               },
               {
                 icon: MessageCircle,
                 title: "Онлайн консультация",
-                description: "Удобный формат работы из любой точки мира через Zoom или другие платформы",
-                price: "от 500 рублей",
+                description: "Удобный формат работы из любой точки мира через WhatsUp или другие платформы",
+                price: "от 2000 рублей",
                 duration: "75 минут"
               },
               {
