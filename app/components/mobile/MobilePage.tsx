@@ -137,7 +137,7 @@ function MobileHero({ scrollToSection }) {
         style={{ y }}
       >
         <img
-          src="/images/background.png"
+          src="/images/backgroundmob.png"
           alt="Professional portrait"
           className="w-full h-full object-cover object-center"
         />
@@ -176,13 +176,13 @@ function MobileHero({ scrollToSection }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Терапия, вдохновленная мудростью и спокойствием Рима
+            Терапия,<br />вдохновленная мудростью<br />и спокойствием Рима
           </p>
         </motion.div>
       </div>
 
       {/* НИЖНИЙ БЛОК - всегда внизу */}
-      <div className="absolute bottom-0 left-0 right-0 pb-20 px-6">
+      <div className="absolute bottom-0 left-0 right-0 pb-8 px-6">
         {/* Индивидуальная терапия и Онлайн */}
         <motion.div 
           className="flex flex-wrap gap-2 mb-8"
@@ -438,7 +438,7 @@ function MobileQuote() {
   );
 }
 
-// Мобильная поддержка
+// Мобильная поддержка с горизонтальным скроллом
 function MobileSupport({ scrollToSection }) {
   const supportItems: SupportItem[] = [
     {
@@ -479,45 +479,69 @@ function MobileSupport({ scrollToSection }) {
   });
 
   return (
-    <section id="requests" className="py-16 bg-[#f6f2ec] dark:bg-neutral-900 px-6" ref={ref}>
-      <motion.div 
-        className="text-center mb-12"
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-      >
-        <h2 className="text-3xl font-light text-neutral-800 dark:text-white mb-2">
-          <span className="text-amber-700 font-roslindale">Поддержу</span> в решении трудностей
-        </h2>
-        <p className="text-neutral-500 dark:text-neutral-400 mt-4 text-sm">
-          Мысли, которые разрушительно влияют на нас и окружение
-        </p>
-      </motion.div>
-
-      <div className="space-y-6">
-        {supportItems.map((item, index) => (
-          <motion.div
-            key={index}
+    <section id="requests" className="py-16 bg-[#f6f2ec] dark:bg-neutral-900" ref={ref}>
+      <div className="px-6">
+        {/* Заголовок и описание - выравнивание по правому краю */}
+        <div className="mb-12 text-right">
+          <motion.h2 
+            className="text-3xl font-light text-neutral-800 dark:text-white mb-2"
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: index * 0.1, duration: 0.6 }}
-            className="bg-[#E1EAD7] dark:bg-neutral-800 p-6 rounded-xl border border-neutral-200 dark:border-neutral-700"
+            transition={{ duration: 0.6 }}
           >
-            <div className="text-neutral-400 text-sm mb-3 italic">{item.number}</div>
-            
-            <p className="text-neutral-700 dark:text-neutral-300 text-base leading-relaxed mb-4">
-              {item.title}
-            </p>
+            <span className="text-amber-700 font-roslindale">Поддержу</span> в решении трудностей
+          </motion.h2>
+          
+          <motion.p 
+            className="text-neutral-500 dark:text-neutral-400 mt-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            Мысли, которые разрушительно влияют на нас и окружение
+          </motion.p>
+        </div>
+      </div>
 
-            <div className="w-full h-48 overflow-hidden rounded-lg">
-              <img 
-                src={item.image} 
-                alt={item.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
-        ))}
+      {/* Горизонтальный скролл */}
+      <div className="overflow-x-auto hide-scrollbar">
+        <div className="flex gap-4 px-6 pb-4" style={{ width: 'max-content' }}>
+          {supportItems.map((item, index) => (
+            <motion.div 
+              key={`support-${index}`}
+              initial={{ opacity: 0, x: 50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="flex-shrink-0 w-80 bg-[#E1EAD7] dark:bg-neutral-800 rounded-2xl p-6 border border-neutral-200 dark:border-neutral-700"
+            >
+              <div className="text-neutral-400 text-lg italic mb-4">{item.number}</div>
+              
+              <p className="text-neutral-700 dark:text-neutral-300 text-lg leading-relaxed mb-6">
+                {item.title}
+              </p>
+
+              <div className="w-full h-48 overflow-hidden rounded-xl">
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Индикатор скролла */}
+      <div className="flex justify-center mt-6 px-6">
+        <div className="flex gap-2">
+          {supportItems.map((_, index) => (
+            <div 
+              key={index}
+              className="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-600"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
