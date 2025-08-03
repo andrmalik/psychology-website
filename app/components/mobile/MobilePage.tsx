@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
+
 
 // Интерфейсы
 interface SupportItem {
@@ -136,11 +138,13 @@ function MobileHero({ scrollToSection }) {
         className="absolute inset-0"
         style={{ y }}
       >
-        <img
-          src="/images/background.png"
-          alt="Professional portrait"
-          className="w-full h-full object-cover object-center"
-        />
+<Image
+  src="/images/background.png"
+  alt="Background"
+  fill  // заменяет w-full h-full
+  className="object-cover"
+  priority  // для важных изображений
+/>
         <div className="absolute inset-0 bg-black/40" />
       </motion.div>
 
@@ -403,10 +407,12 @@ function MobileQuote() {
           className="mb-8"
         >
           <div className="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden border-3 border-amber-700/20">
-            <img 
+            <Image 
               src="/images/new.png" 
               alt="Portrait" 
-              className="w-full h-full object-cover"
+  fill  // заменяет w-full h-full
+  className="object-cover"
+  priority  // для важных изображений
             />
           </div>
         </motion.div>
@@ -499,10 +505,11 @@ function MobileSupport({ scrollToSection }) {
             </p>
 
             <div className="w-full h-48 overflow-hidden rounded-lg">
-              <img 
+              <Image 
                 src={item.image} 
                 alt={item.title}
-                className="w-full h-full object-cover"
+                  fill  // заменяет w-full h-full
+  className="object-cover"
               />
             </div>
           </motion.div>
@@ -570,11 +577,14 @@ function MobileAbout() {
         animate={inView ? { opacity: 1, scale: 1 } : {}}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
-        <img
-          src="/images/ps.png"
-          alt="Профессиональный портрет"
-          className="rounded-xl w-full h-64 object-cover"
-        />
+<div className="w-full h-64 rounded-xl overflow-hidden relative">
+  <Image
+    src="/images/ps.png"
+    alt="Профессиональный портрет"
+    fill
+    className="object-cover"
+  />
+</div>
       </motion.div>
 
       {/* Информация */}
@@ -836,11 +846,14 @@ function MobileContacts() {
         animate={inView ? { opacity: 1, scale: 1 } : {}}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
-        <img
-          src="/images/contacts.png"
-          alt="Контактное изображение"
-          className="rounded-xl w-full h-48 object-cover"
-        />
+<div className="w-full h-48 rounded-xl overflow-hidden relative">
+  <Image
+    src="/images/contacts.png"
+    alt="Контактное изображение"
+    fill
+    className="object-cover"
+  />
+</div>
         <p className="text-neutral-600 dark:text-neutral-400 mt-4 text-center">
           Мы можем обсудить любой вопрос, который волнует вас
         </p>

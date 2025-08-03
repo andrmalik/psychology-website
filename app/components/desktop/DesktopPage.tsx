@@ -6,6 +6,8 @@ import { motion, useScroll, useTransform, useSpring, animate } from 'framer-moti
 import { useInView } from 'react-intersection-observer';
 import { ArrowLeft, ArrowRight, ArrowUpRight, ArrowUp, Moon, Sun, MessageCircle, Calendar, Star, Award, Users, Brain, BookOpen, Monitor, Heart } from 'lucide-react';import _ from 'lodash';
 import ContactForm from '../ContactForm';
+import Image from 'next/image';
+
 
 // Типы
 interface SupportItem {
@@ -503,11 +505,12 @@ export default function DesktopPage() {
     style={{ y }}
     className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
   >
-    <img
+    <Image
       src="/images/background.png"
       alt="Professional portrait"
-      className="w-full h-full object-cover object-center"
-      priority="true"
+fill
+  className="object-cover object-center"
+  priority
     />
     <div className="absolute inset-0 bg-black/30" />
   </motion.div>
@@ -732,15 +735,16 @@ export default function DesktopPage() {
         </h2>
       </div>
       
-      <div className="w-1/3">
-        <div className="aspect-square rounded-full overflow-hidden border-4 border-amber-700/20">
-          <img 
-            src="/images/new.png" 
-            alt="Portrait" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
+<div className="w-1/3">
+  <div className="aspect-square rounded-full overflow-hidden border-4 border-amber-700/20 relative">
+    <Image
+      src="/images/new.png"
+      alt="Portrait"
+      fill
+      className="object-cover"
+    />
+  </div>
+</div>
     </div>
   </div>
 </section>
@@ -818,14 +822,14 @@ export default function DesktopPage() {
               {item.title}
             </p>
 
-            <div className="w-full h-[180px] overflow-hidden rounded-xl">
-              <img 
-                src={item.image} 
-                alt={item.title}
-                loading="lazy"
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-              />
-            </div>
+<div className="w-full h-[180px] overflow-hidden rounded-xl relative">
+  <Image
+    src={item.image}
+    alt={item.title}
+    fill
+    className="object-cover transform hover:scale-105 transition-transform duration-300"
+  />
+</div>
           </motion.div>
         ))}
       </div>
@@ -884,12 +888,14 @@ export default function DesktopPage() {
             </div>
           </div>
           <div>
-            <img
-              src="/images/ps.png"
-              alt="Профессиональный портрет"
-              loading="lazy"
-              className="rounded-lg w-full h-auto object-cover"
-            />
+<Image
+  src="/images/ps.png"
+  alt="Профессиональный портрет"
+  width={800}
+  height={600}
+  className="rounded-lg w-full h-auto object-cover"
+  sizes="(max-width: 768px) 100vw, 50vw"
+/>
           </div>
         </div>
       </section>
@@ -998,12 +1004,14 @@ export default function DesktopPage() {
   <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
     {/* Левая колонка */}
     <div>
-      <img
-        src="/images/contacts.png"
-        alt="Контактное изображение"
-        loading="lazy"
-        className="rounded-lg w-[85%] h-auto object-cover mt-24" // Было w-[70%], добавили mt-24
-        />
+<Image
+  src="/images/contacts.png"
+  alt="Контактное изображение"
+  width={800}
+  height={600}
+  className="rounded-lg w-[85%] h-auto object-cover mt-24"
+  sizes="(max-width: 768px) 85vw, 70vw"
+/>
       <p className="text-neutral-600 dark:text-neutral-400 mt-6 text-lg">
         Мы можем обсудить любой<br />
         вопрос, который волнует вас
