@@ -414,7 +414,7 @@ function MobileQuote() {
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
-          <div className="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden border-3 border-amber-700/20">
+          <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-3 border-amber-700/20">
             <img 
               src="/images/new.png" 
               alt="Portrait" 
@@ -534,17 +534,7 @@ function MobileSupport({ scrollToSection }) {
         </div>
       </div>
 
-      {/* Индикатор скролла */}
-      <div className="flex justify-center mt-6 px-6">
-        <div className="flex gap-2">
-          {supportItems.map((_, index) => (
-            <div 
-              key={index}
-              className="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-600"
-            />
-          ))}
-        </div>
-      </div>
+
     </section>
   );
 }
@@ -575,10 +565,10 @@ function MobileAbout() {
   ];
 
   const stats = [
-    { icon: Users, value: '20+', label: 'довольных клиентов' },
+    { icon: Users, value: '30+', label: 'довольных клиентов' },
     { icon: Star, value: '4.9', label: 'средняя оценка' },
-    { icon: Award, value: '1', label: 'год практики' },
-    { icon: BookOpen, value: '100+', label: 'часов консультаций' }
+    { icon: Award, value: '1+', label: 'год практики' },
+    { icon: BookOpen, value: '150+', label: 'часов консультаций' }
   ];
 
   const [ref, inView] = useInView({
@@ -628,7 +618,7 @@ function MobileAbout() {
       >
         <div className="w-full h-64 rounded-xl overflow-hidden relative">
           <Image
-            src="/images/ps.png"
+            src="/images/background.png"
             alt="Профессиональный портрет"
             fill
             className="object-cover"
@@ -651,12 +641,12 @@ function MobileAbout() {
             <div key={index} className="relative text-center p-6">
               {/* Вертикальная разделительная линия */}
               {index % 2 === 0 && (
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-16 bg-gradient-to-b from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"></div>
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"></div>
               )}
               
               {/* Горизонтальная разделительная линия между рядами */}
               {index < 2 && (
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-px bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"></div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"></div>
               )}
               
               <stat.icon className="w-8 h-8 mx-auto mb-3 text-amber-700" />
