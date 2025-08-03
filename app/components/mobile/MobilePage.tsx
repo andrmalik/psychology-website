@@ -146,48 +146,54 @@ function MobileHero({ scrollToSection }) {
 
       {/* Контент */}
       <div className="relative z-10 px-6 pb-20">
-        <motion.div 
-          className="flex flex-wrap gap-2 mb-8"
+        {/* 3. Клинический психолог - поднял повыше */}
+        <motion.h1 
+          className="text-white text-4xl font-light mb-6 leading-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white">
-            Индивидуальная терапия
-          </span>
-          <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white">
-            Онлайн и лично
-          </span>
-        </motion.div>
-
-        <motion.h1 
-          className="text-white text-4xl font-light mb-3 leading-tight"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
           Клинический<br />Психолог
         </motion.h1>
         
-        <motion.h1 
-          className="text-white text-5xl mb-6 leading-tight"
+        {/* 4. Андрей Малик - поднял выше и разместил справа */}
+        <motion.div className="flex justify-end mb-8">
+          <h1 
+            className="text-white text-5xl leading-tight text-right"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <span className="font-roslindale">Андрей</span><br />
+            <span className="font-light">Малик</span>
+          </h1>
+        </motion.div>
+
+        <motion.p 
+          className="text-white/90 text-lg mb-12 leading-relaxed max-w-sm"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          <span className="font-roslindale">Андрей</span><br />
-          <span className="font-light">Малик</span>
-        </motion.h1>
+          Терапия, вдохновленная мудростью и спокойствием Рима
+        </motion.p>
 
-        <motion.p 
-          className="text-white/90 text-lg mb-10 leading-relaxed max-w-sm"
+        {/* 2. Индивидуальная терапия и Онлайн и лично - разместил друг над другом и опустил вниз */}
+        <motion.div 
+          className="flex flex-col gap-3 mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
         >
-          Терапия, вдохновленная мудростью и спокойствием Рима
-        </motion.p>
+          <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white text-center">
+            Индивидуальная терапия
+          </span>
+          <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white text-center">
+            Онлайн и лично (в Израиле)
+          </span>
+        </motion.div>
 
+        {/* 1. Спланировать консультацию - опустил пониже */}
         <motion.button 
           onClick={() => scrollToSection('contacts')}
           className="w-full py-4 bg-white text-neutral-900 rounded-full text-center font-medium hover:bg-neutral-100 transition-colors flex items-center justify-center gap-2"
@@ -571,7 +577,7 @@ function MobileAbout() {
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         <img
-          src="/images/ps.png"
+          src="/images/psmob.png"
           alt="Профессиональный портрет"
           className="rounded-xl w-full h-64 object-cover"
         />

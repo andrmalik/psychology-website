@@ -44,18 +44,19 @@ export default function RootLayout({
  children: React.ReactNode;
 }>) {
 return (
-  <html lang="ru">
-    <head>
-      <meta name="theme-color" content="#f6f2ec" />
-      <meta name="msapplication-navbutton-color" content="#f6f2ec" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="theme-color" content="#f6f2ec" media="(prefers-color-scheme: light)" />
-      <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    </head>
-    <body className="antialiased">
+<html lang="ru">
+  <head>
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    
+    <meta name="msapplication-navbutton-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  </head>
+  <body className="antialiased">
 
        {children}
      </body>
