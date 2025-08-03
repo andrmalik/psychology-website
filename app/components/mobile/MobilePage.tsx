@@ -348,7 +348,7 @@ function MobileProblems() {
   return (
     <section className="py-16 bg-white dark:bg-neutral-900 px-6" ref={ref}>
       <motion.div 
-        className="text-left mb-12"
+        className="text-center mb-12"
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
@@ -358,7 +358,7 @@ function MobileProblems() {
         </h2>
         <p className="text-2xl text-amber-700 font-roslindale">мы справимся</p>
         <p className="text-neutral-500 dark:text-neutral-400 mt-4 text-sm">
-          Проблемы, которые больше не <br /> придется решать в одиночку
+          Проблемы, которые больше не придется решать в одиночку
         </p>
       </motion.div>
 
