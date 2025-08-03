@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { 
   Menu, X, Phone, ArrowUpRight, Users, Star, Award, BookOpen,
   Monitor, Heart, Brain, MessageCircle, Calendar, ChevronDown,
@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 
 // Интерфейсы
 interface SupportItem {
