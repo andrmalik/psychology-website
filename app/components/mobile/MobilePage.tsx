@@ -176,7 +176,7 @@ function MobileHero({ scrollToSection }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Терапия,<br />вдохновленная мудростью<br />и спокойствием Рима
+            Терапия, вдохновленная<br /> мудростью Рима
           </p>
         </motion.div>
       </div>
@@ -348,7 +348,7 @@ function MobileProblems() {
   return (
     <section className="py-16 bg-white dark:bg-neutral-900 px-6" ref={ref}>
       <motion.div 
-        className="text-center mb-12"
+        className="text-left mb-12"
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
@@ -358,7 +358,7 @@ function MobileProblems() {
         </h2>
         <p className="text-2xl text-amber-700 font-roslindale">мы справимся</p>
         <p className="text-neutral-500 dark:text-neutral-400 mt-4 text-sm">
-          Проблемы, которые больше не придется решать в одиночку
+          Проблемы, которые больше не <br /> придется решать в одиночку
         </p>
       </motion.div>
 
@@ -482,7 +482,7 @@ function MobileSupport({ scrollToSection }) {
     <section id="requests" className="py-16 bg-[#f6f2ec] dark:bg-neutral-900" ref={ref}>
       <div className="px-6">
         {/* Заголовок и описание - выравнивание по правому краю */}
-        <div className="mb-12 text-right">
+        <div className="mb-12 text-left">
           <motion.h2 
             className="text-3xl font-light text-neutral-800 dark:text-white mb-2"
             initial={{ opacity: 0, y: 30 }}
@@ -498,11 +498,12 @@ function MobileSupport({ scrollToSection }) {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Мысли, которые разрушительно влияют на нас и окружение
+            Мысли, которые разрушительно<br />  влияют на нас и окружение
           </motion.p>
         </div>
       </div>
 
+          
       {/* Горизонтальный скролл */}
       <div className="overflow-x-auto hide-scrollbar">
         <div className="flex gap-4 px-6 pb-4" style={{ width: 'max-content' }}>
@@ -586,33 +587,20 @@ function MobileAbout() {
 
   return (
     <section id="about" className="py-16 bg-white dark:bg-neutral-900 px-6" ref={ref}>
+      {/* Заголовок */}
       <motion.div 
         className="mb-12"
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
       >
-<h2 className="text-3xl font-light text-neutral-800 dark:text-white mb-2">
+        <h2 className="text-3xl font-light text-neutral-800 dark:text-white mb-2">
           Меня <span className="text-amber-700 font-roslindale">зовут</span>
         </h2>
         <h2 className="text-3xl font-light text-neutral-800 dark:text-white">Андрей Малик</h2>
       </motion.div>
 
-      {/* Фото */}
-      <motion.div 
-        className="mb-8"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={inView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ delay: 0.2, duration: 0.6 }}
-      >
-        <img
-          src="/images/psmob.png"
-          alt="Профессиональный портрет"
-          className="rounded-xl w-full h-64 object-cover"
-        />
-      </motion.div>
-
-      {/* Информация */}
+      {/* Информация - список */}
       <div className="space-y-6 mb-12">
         {aboutItems.map((item, index) => (
           <motion.div
@@ -630,20 +618,55 @@ function MobileAbout() {
         ))}
       </div>
 
-      {/* Статистика */}
+      {/* Фото - перенесено под список */}
       <motion.div 
-        className="grid grid-cols-2 gap-6"
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
+        className="mb-12"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={inView ? { opacity: 1, scale: 1 } : {}}
         transition={{ delay: 0.8, duration: 0.6 }}
       >
-        {stats.map((stat, index) => (
-          <div key={index} className="text-center bg-[#f6f2ec] dark:bg-neutral-800 p-4 rounded-xl">
-            <stat.icon className="w-8 h-8 mx-auto mb-2 text-amber-700" />
-            <div className="text-2xl font-light text-neutral-800 dark:text-white">{stat.value}</div>
-            <div className="text-neutral-600 dark:text-neutral-400 text-sm">{stat.label}</div>
-          </div>
-        ))}
+        <div className="w-full h-64 rounded-xl overflow-hidden relative">
+          <Image
+            src="/images/ps.png"
+            alt="Профессиональный портрет"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </motion.div>
+
+      {/* Статистика */}
+      <motion.div 
+        className="relative"
+        initial={{ opacity: 0, y: 30 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 1, duration: 0.6 }}
+      >
+        {/* Горизонтальная разделительная линия сверху */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-700 to-transparent mb-8"></div>
+        
+        <div className="grid grid-cols-2 gap-0">
+          {stats.map((stat, index) => (
+            <div key={index} className="relative text-center p-6">
+              {/* Вертикальная разделительная линия */}
+              {index % 2 === 0 && (
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-16 bg-gradient-to-b from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"></div>
+              )}
+              
+              {/* Горизонтальная разделительная линия между рядами */}
+              {index < 2 && (
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-px bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-700 to-transparent"></div>
+              )}
+              
+              <stat.icon className="w-8 h-8 mx-auto mb-3 text-amber-700" />
+              <div className="text-2xl font-light text-neutral-800 dark:text-white mb-1">{stat.value}</div>
+              <div className="text-neutral-600 dark:text-neutral-400 text-sm">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Горизонтальная разделительная линия снизу */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-700 to-transparent mt-8"></div>
       </motion.div>
     </section>
   );
