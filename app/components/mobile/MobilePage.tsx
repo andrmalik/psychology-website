@@ -124,31 +124,31 @@ function MobileNavigation({ isMenuOpen, setIsMenuOpen, activeSection, isDarkMode
   );
 }
 
-/// Мобильный герой
+// Мобильный герой
 function MobileHero({ scrollToSection }) {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-end bg-[#f6f2ec] dark:bg-neutral-900 overflow-hidden">
+    <section className="relative min-h-screen bg-[#f6f2ec] dark:bg-neutral-900 overflow-hidden">
       {/* Фоновое изображение */}
       <motion.div 
         className="absolute inset-0"
         style={{ y }}
       >
         <img
-          src="/images/backgroundmob.png"
+          src="/images/background.png"
           alt="Professional portrait"
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/40" />
       </motion.div>
 
-      {/* Контент */}
-      <div className="relative z-10 px-6 pb-20">
-        {/* 3. Клинический психолог - поднял повыше */}
+      {/* ВЕРХНИЙ БЛОК - всегда вверху */}
+      <div className="absolute top-0 left-0 right-0 pt-20 px-6">
+        {/* Клинический психолог */}
         <motion.h1 
-          className="text-white text-4xl font-light mb-6 leading-tight"
+          className="text-white text-4xl font-light mb-4 leading-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -156,8 +156,8 @@ function MobileHero({ scrollToSection }) {
           Клинический<br />Психолог
         </motion.h1>
         
-        {/* 1. Андрей Малик - одной строкой справа */}
-        <motion.div className="flex justify-end mb-4">
+        {/* Андрей Малик */}
+        <motion.div className="flex justify-end mb-2">
           <h1 
             className="text-white text-5xl leading-tight text-right font-roslindale"
             initial={{ opacity: 0, y: 20 }}
@@ -168,8 +168,8 @@ function MobileHero({ scrollToSection }) {
           </h1>
         </motion.div>
 
-        {/* 4. Терапия вдохновленная мудростью - под словом Андрей, текст меньше */}
-        <motion.div className="flex justify-end mb-16">
+        {/* Терапия вдохновленная мудростью */}
+        <motion.div className="flex justify-end">
           <p 
             className="text-white/90 text-base leading-relaxed max-w-xs text-right"
             initial={{ opacity: 0, y: 20 }}
@@ -179,8 +179,11 @@ function MobileHero({ scrollToSection }) {
             Терапия, вдохновленная мудростью и спокойствием Рима
           </p>
         </motion.div>
+      </div>
 
-        {/* 2. Индивидуальная терапия и Онлайн - вернул прежний размер как теги */}
+      {/* НИЖНИЙ БЛОК - всегда внизу */}
+      <div className="absolute bottom-0 left-0 right-0 pb-20 px-6">
+        {/* Индивидуальная терапия и Онлайн */}
         <motion.div 
           className="flex flex-wrap gap-2 mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -195,7 +198,7 @@ function MobileHero({ scrollToSection }) {
           </span>
         </motion.div>
 
-        {/* 3. Спланировать консультацию - опустил еще пониже */}
+        {/* Спланировать консультацию */}
         <motion.button 
           onClick={() => scrollToSection('contacts')}
           className="w-full py-4 bg-white text-neutral-900 rounded-full text-center font-medium hover:bg-neutral-100 transition-colors flex items-center justify-center gap-2"
