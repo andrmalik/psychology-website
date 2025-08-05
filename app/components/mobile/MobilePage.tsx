@@ -142,7 +142,7 @@ function MobileHero({ scrollToSection }) {
           alt="Professional portrait"
           className="w-full h-full object-cover object-center"
         />
-
+<div className="absolute inset-0 bg-black/20" />
       </motion.div>
 
       {/* ВЕРХНИЙ БЛОК - всегда вверху */}
