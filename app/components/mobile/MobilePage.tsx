@@ -142,7 +142,7 @@ function MobileHero({ scrollToSection }) {
           alt="Professional portrait"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/40" />
+
       </motion.div>
 
       {/* ВЕРХНИЙ БЛОК - всегда вверху */}
@@ -670,7 +670,7 @@ function MobileServiceFormats() {
       icon: Users,
       title: "Индивидуальная терапия",
       description: "Персональные сессии для глубокой проработки личных запросов и достижения ваших целей",
-      price: "от 1500 рублей",
+      price: "от 2000 рублей",
       duration: "75 минут"
     },
     {
