@@ -138,7 +138,7 @@ function MobileHero({ scrollToSection }) {
         style={{ y }}
       >
         <img
-          src="/images/backgroundmob.png"
+          src="/images/backgroundmob.jpg"
           alt="Professional portrait"
           className="w-full h-full object-cover object-center"
         />
@@ -416,7 +416,7 @@ function MobileQuote() {
         >
           <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-3 border-amber-700/20">
             <img 
-              src="/images/new.png" 
+              src="/images/new.jpg" 
               alt="Portrait" 
               className="w-full h-full object-cover"
             />
@@ -445,32 +445,32 @@ function MobileSupport({ scrollToSection }) {
     {
       number: "1",
       title: "Стремлюсь к идеальности, которая сопровождается постоянным стрессом",
-      image: "/images/2.png"
+      image: "/images/2.jpg"
     },
     {
       number: "2", 
       title: "Не хочу соответствовать ожиданиям других людей, хочу быть настоящим",
-      image: "/images/1.png"
+      image: "/images/1.jpg"
     },
     {
       number: "3",
       title: "Споры с близкими людьми, которые разрушают наши отношения",
-      image: "/images/6.png"
+      image: "/images/6.jpg"
     },
     {
       number: "4",
       title: "Сложности в принятии важных решений и страх перед будущим",
-      image: "/images/3.png"
+      image: "/images/3.jpg"
     },
     {
       number: "5",
       title: "Потеря мотивации и интереса к любимому делу",
-      image: "/images/4.png"
+      image: "/images/4.jpg"
     },
     {
       number: "6",
       title: "Чувство одиночества и сложности в построении отношений",
-      image: "/images/5.png"
+      image: "/images/5.jpg"
     }
   ];
 
@@ -619,7 +619,7 @@ function MobileAbout() {
       >
         <div className="w-full h-64 rounded-xl overflow-hidden relative">
           <Image
-            src="/images/background.png"
+            src="/images/background.jpg"
             alt="Профессиональный портрет"
             fill
             className="object-cover"
@@ -887,7 +887,7 @@ function MobileContacts() {
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         <img
-          src="/images/contacts.png"
+          src="/images/contacts.jpg"
           alt="Контактное изображение"
           className="rounded-xl w-full h-48 object-cover"
         />

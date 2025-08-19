@@ -71,10 +71,10 @@ export default function DesktopPage() {
 
   // Данные
   const stats = [
-    { icon: Users, value: '20+', label: 'довольных клиентов' },
+    { icon: Users, value: '30+', label: 'довольных клиентов' },
     { icon: Star, value: '4.9', label: 'средняя оценка' },
-    { icon: Award, value: '1', label: 'год практики' },
-    { icon: BookOpen, value: '100+', label: 'часов консультаций' }
+    { icon: Award, value: '1+', label: 'лет практики' },
+    { icon: BookOpen, value: '150+', label: 'часов консультаций' }
   ];
   interface SupportItem {
     number: string;
@@ -85,32 +85,32 @@ export default function DesktopPage() {
     {
       number: "1",
       title: "Стремлюсь к идеальности, которая сопровождается постоянным стрессом",
-      image: "/images/2.png"
+      image: "/images/2.jpg"
     },
     {
       number: "2", 
       title: "Не хочу соответствовать ожиданиям других людей, хочу быть настоящим",
-      image: "/images/1.png"
+      image: "/images/1.jpg"
     },
     {
       number: "3",
       title: "Споры с близкими людьми, которые разрушают наши отношения",
-      image: "/images/6.png"
+      image: "/images/6.jpg"
     },
     {
       number: "4",
       title: "Сложности в принятии важных решений и страх перед будущим",
-      image: "/images/3.png"
+      image: "/images/3.jpg"
     },
     {
       number: "5",
       title: "Потеря мотивации и интереса к любимому делу",
-      image: "/images/4.png"
+      image: "/images/4.jpg"
     },
     {
       number: "6",
       title: "Чувство одиночества и сложности в построении отношений",
-      image: "/images/5.png"
+      image: "/images/5.jpg"
     }
   ];
 
@@ -506,7 +506,7 @@ export default function DesktopPage() {
     className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
   >
     <Image
-      src="/images/background.png"
+      src="/images/background.jpg"
       alt="Professional portrait"
 fill
   className="object-cover object-center"
@@ -738,7 +738,7 @@ fill
 <div className="w-1/3">
   <div className="aspect-square rounded-full overflow-hidden border-4 border-amber-700/20 relative">
     <Image
-      src="/images/new.png"
+      src="/images/new.jpg"
       alt="Portrait"
       fill
       className="object-cover"
@@ -889,7 +889,7 @@ fill
           </div>
           <div>
 <Image
-  src="/images/ps.png"
+  src="/images/ps.jpg"
   alt="Профессиональный портрет"
   width={800}
   height={600}
@@ -1005,7 +1005,7 @@ fill
     {/* Левая колонка */}
     <div>
 <Image
-  src="/images/contacts.png"
+  src="/images/contacts.jpg"
   alt="Контактное изображение"
   width={800}
   height={600}
