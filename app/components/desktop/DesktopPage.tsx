@@ -71,7 +71,7 @@ export default function DesktopPage() {
 
   // Данные
   const stats = [
-    { icon: Users, value: '30+', label: 'מפסוטים' },
+    { icon: Users, value: '30+', label: 'ע' },
     { icon: Star, value: '4.9', label: 'средняя оценка' },
     { icon: Award, value: '1+', label: 'лет практики' },
     { icon: BookOpen, value: '150+', label: 'часов консультаций' }
@@ -523,7 +523,7 @@ fill
         transition={{ delay: 0.2 }}
         className="px-6 py-2 bg-[#E1EAD7]/50 backdrop-blur-sm rounded-full text-sm tracking-wide text-white"
       >
-        Индивидуальная терапия
+        הכנה לבגרות
       </motion.span>
       <motion.span 
         initial={{ opacity: 0, y: 20 }}
@@ -541,7 +541,7 @@ fill
   transition={{ delay: 0.6 }}
   className="text-7xl text-white mb-2 font-extralight tracking-wide whitespace-nowrap"
 >
-  מורה למטמטיקה
+מורה למטממטיקה 5 יח"ל
 </motion.h1>
 
     <motion.h1
@@ -550,7 +550,7 @@ fill
       transition={{ delay: 0.7 }}
       className="text-8xl text-white mb-6 tracking-wide whitespace-nowrap"
     >
-      <span className="font-roslindale">אננדריי</span>&nbsp;
+      <span className="font-roslindale">אנדרי</span>&nbsp;
       <span className="font-extralight">מליק</span>
     </motion.h1>
 
