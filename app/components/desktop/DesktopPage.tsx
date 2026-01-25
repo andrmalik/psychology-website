@@ -410,8 +410,8 @@ export default function DesktopPage() {
 
         <div className="py-4 px-12 flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
-            <span className="text-neutral-800 dark:text-white text-2xl">Андрей</span>
-            <span className="text-amber-700 text-2xl">Малик</span>
+            <span className="text-neutral-800 dark:text-white text-2xl">אנדרי</span>
+            <span className="text-amber-700 text-2xl">מליק</span>
           </div>
           
           <div className="absolute left-1/2 -translate-x-1/2">
@@ -848,7 +848,7 @@ fill
           <div className="mb-12">
           <h2 className="text-[#544B42] dark:text-white text-5xl font-light inline-block">Меня </h2>{" "}
 <h2 className="text-amber-700 text-5xl font-roslindale mb-2 inline-block"> зовут</h2>
-<h2 className="text-[#544B42] dark:text-white text-5xl font-light block">Андрей Малик</h2>
+<h2 className="text-[#544B42] dark:text-white text-5xl font-light block">אנדרי מליק</h2>
 </div>
             
             <div className="grid gap-12">
@@ -1049,8 +1049,8 @@ fill
             <div className="flex flex-col items-start">
               {/* Brand name */}
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-neutral-800 dark:text-white text-3xl">Андрей</span>
-                <span className="text-amber-700 text-3xl">Малик</span>
+                <span className="text-neutral-800 dark:text-white text-3xl">אנדרי</span>
+                <span className="text-amber-700 text-3xl">מליק</span>
               </div>
 
               {/* Tagline */}
