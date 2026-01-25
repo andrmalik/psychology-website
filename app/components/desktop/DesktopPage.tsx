@@ -71,7 +71,7 @@ export default function DesktopPage() {
 
   // Данные
   const stats = [
-    { icon: Users, value: '30+', label: 'довольных клиентов' },
+    { icon: Users, value: '30+', label: 'מפסוטים' },
     { icon: Star, value: '4.9', label: 'средняя оценка' },
     { icon: Award, value: '1+', label: 'лет практики' },
     { icon: BookOpen, value: '150+', label: 'часов консультаций' }
