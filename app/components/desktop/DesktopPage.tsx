@@ -541,7 +541,7 @@ fill
   transition={{ delay: 0.6 }}
   className="text-7xl text-white mb-2 font-extralight tracking-wide whitespace-nowrap"
 >
-  Клинический Психолог
+  מורה למטמטיקה
 </motion.h1>
 
     <motion.h1
@@ -550,8 +550,8 @@ fill
       transition={{ delay: 0.7 }}
       className="text-8xl text-white mb-6 tracking-wide whitespace-nowrap"
     >
-      <span className="font-roslindale">Андрей</span>&nbsp;
-      <span className="font-extralight">Малик</span>
+      <span className="font-roslindale">אננדריי</span>&nbsp;
+      <span className="font-extralight">מליק</span>
     </motion.h1>
 
     <motion.p 
