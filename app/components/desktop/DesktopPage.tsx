@@ -71,10 +71,10 @@ export default function DesktopPage() {
 
   // Данные
   const stats = [
-    { icon: Users, value: '30+', label: 'ע' },
-    { icon: Star, value: '4.9', label: 'средняя оценка' },
-    { icon: Award, value: '1+', label: 'лет практики' },
-    { icon: BookOpen, value: '150+', label: 'часов консультаций' }
+    { icon: Users, value: '30+', label: 'תלמידים' },
+    { icon: Star, value: '4.9', label: 'ציון ממוצע' },
+    { icon: Award, value: '3+', label: 'שנות ניסיון' },
+    { icon: BookOpen, value: '300+', label: 'שעות לימוד' }
   ];
   interface SupportItem {
     number: string;
@@ -531,7 +531,7 @@ fill
         transition={{ delay: 0.4 }}
         className="px-6 py-2 bg-[#E1EAD7]/50 backdrop-blur-sm rounded-full text-sm tracking-wide text-white"
       >
-        Онлайн и лично (в Израиле)
+        תמיכה פסיכולוגית
       </motion.span>
     </div>
 
@@ -561,7 +561,8 @@ fill
       transition={{ delay: 0.8 }}
       className="text-xl text-white/90 mb-12 tracking-wide ml-auto max-w-xl"
     >
-      Терапия, вдохновленная мудростью и спокойствием Рима
+      לימוד שמושפע מהחכמה והשקט של רומא
+
     </motion.p>
 
     <motion.div 
@@ -575,7 +576,7 @@ fill
         onClick={() => scrollToSection('contacts')}
         aria-label="Спланировать консультацию"
       >
-        Спланировать консультацию
+        לתאם פגישת ייעוץ
         <ArrowUpRight 
           size={18} 
           className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" 
@@ -847,8 +848,8 @@ fill
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
           <div>
           <div className="mb-12">
-          <h2 className="text-[#544B42] dark:text-white text-5xl font-light inline-block">קוראים </h2>{" "}
-<h2 className="text-amber-700 text-5xl font-roslindale mb-2 inline-block"> לי</h2>
+          <h2 className="text-[#544B42] dark:text-white text-5xl font-light inline-block">לי </h2>{" "}
+<h2 className="text-amber-700 text-5xl font-roslindale mb-2 inline-block"> קוראים</h2>
 <h2 className="text-[#544B42] dark:text-white text-5xl font-light block">אנדרי מליק</h2>
 </div>
             
