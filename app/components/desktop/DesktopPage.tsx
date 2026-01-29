@@ -429,7 +429,7 @@ export default function DesktopPage() {
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                ЗАПРОСЫ ДЛЯ РАБОТЫ
+                אפשרויות לימוד
               </a>
               <a
                 href="#skills"
@@ -444,7 +444,7 @@ export default function DesktopPage() {
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                УСЛУГИ
+                הצעות
               </a>
               <a
                 href="#about"
@@ -459,7 +459,7 @@ export default function DesktopPage() {
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                ОБО МНЕ
+                אודותי
               </a>
               <a
                 href="#contacts"
@@ -474,7 +474,7 @@ export default function DesktopPage() {
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                КОНТАКТЫ
+                יצירת קשר
               </a>
             </div>
           </div>
@@ -484,7 +484,7 @@ export default function DesktopPage() {
     className="text-neutral-800 dark:text-white text-sm hover:text-amber-700 dark:hover:text-amber-700 transition-colors mr-8"
     aria-label="Заказать звонок"
   >
-    ЗАКАЗАТЬ ЗВОНОК
+    לשיחת יעוץ
   </button>
   <button
     onClick={() => setIsDarkMode(!isDarkMode)}
@@ -541,7 +541,8 @@ fill
   transition={{ delay: 0.6 }}
   className="text-7xl text-white mb-2 font-extralight tracking-wide whitespace-nowrap"
 >
-מורה למטממטיקה 5 יח"ל
+מורה למטמטיקה 
+5 יח"ל
 </motion.h1>
 
     <motion.h1
@@ -846,8 +847,8 @@ fill
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 gap-24">
           <div>
           <div className="mb-12">
-          <h2 className="text-[#544B42] dark:text-white text-5xl font-light inline-block">Меня </h2>{" "}
-<h2 className="text-amber-700 text-5xl font-roslindale mb-2 inline-block"> зовут</h2>
+          <h2 className="text-[#544B42] dark:text-white text-5xl font-light inline-block">קוראים </h2>{" "}
+<h2 className="text-amber-700 text-5xl font-roslindale mb-2 inline-block"> לי</h2>
 <h2 className="text-[#544B42] dark:text-white text-5xl font-light block">אנדרי מליק</h2>
 </div>
             
@@ -855,23 +856,23 @@ fill
               {[
                 {
                   number: "01",
-                  text: "Эмоционально-Образный терапевт, Когнитивно поведенческий терапевт"
+                  text: "בוגר תואר ראשון במדעי מחשב"
                 },
                 {
                   number: "02",
-                  text: "Окончил Московский Институт Психоанализа (МИП) и Институт ЭОТ"
+                  text: "בוגר הסבה לתואר ראשון בפסיכולוגיה קלינית"
                 },
                 {
                   number: "03",
-                  text: "Регулярно прохожу супервизию и личную терапию"
+                  text: "בוגר גימנסיה עם התמחות במתמטיקה"
                 },
                 {
                   number: "04",
-                  text: "Постоянно повышаю свою квалификацию на професиональных курсах"
+                  text: "בעל הישגים רבים באולימפיאדות במתמטיקה"
                 },
                 {
                   number: "05",
-                  text: "Моя миссия в работе — быть рядом и поддерживать вас на новом пути"
+                  text: "המשימה שלי בעבודה היא להיות לצידכם ולתמוך בכם בדרך חדשה"
                 }
               ].map((item, index) => (
                 <motion.div
@@ -946,7 +947,7 @@ fill
         <div className="max-w-7xl mx-auto px-12">
           <div className="mb-24">
             <h2 className="text-neutral-800 dark:text-white text-5xl font-light mb-8">
-              Форматы работы
+              מה אני מציע
             </h2>
           </div>
 
@@ -954,24 +955,24 @@ fill
             {[
               {
                 icon: Users,
-                title: "Индивидуальная терапия",
-                description: "Персональные сессии для глубокой проработки личных запросов и достижения ваших целей",
-                price: "от 2000 рублей",
-                duration: "75 минут"
+                title: "שיעור פרטי",
+                description: "שיעורים פרטיים אישיים להעמקת הידע ולהכנה לבחינות",
+                price: "150 ₪",
+                duration: "45 דקות"
               },
               {
                 icon: MessageCircle,
-                title: "Онлайн консультация",
-                description: "Удобный формат работы из любой точки мира через WhatsApp или другие платформы",
-                price: "от 2000 рублей",
-                duration: "75 минут"
+                title: "שיעור בקבוצתי",
+                description: "עד 4 תלמידים",
+                price: "80 ₪",
+                duration: "60 דקות"
               },
               {
                 icon: Calendar,
-                title: "Пробная встреча",
-                description: "Знакомство и обсуждение запроса для определения формата дальнейшей работы",
-                price: "Бесплатно",
-                duration: "30 минут"
+                title: "שיוער נסיון",
+                description: "היכרות ודיון במטרות, גיבוש תוכנית לימודים",
+                price: "80 ₪",
+                duration: "45 דקות"
               }
             ].map((service, index) => (
               <motion.div 
@@ -1023,11 +1024,12 @@ fill
       {/* Заголовок и описание */}
       <div className="mb-8 mt-[-150px]"> {/* Было mb-32 */}
       <h2 className="text-[#544B42] dark:text-white text-5xl font-light mb-24">
-          Начните новую жизнь<br />
-          <span className="text-amber-700 font-roslindale">уже сегодня</span>
+          התחילו חיים חדשים<br />
+          <span className="text-amber-700 font-roslindale">כבר היום</span>
         </h2>
         <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
-          Решиться на изменения сложно, но вы здесь, а значит первый шаг уже сделан
+          להחליט על שינוי זה לא פשוט, אבל אתם כאן — וזה אומר שהצעד הראשון כבר נעשה
+
         </p>
       </div>
       {/* Форма */}
@@ -1065,28 +1067,28 @@ fill
     onClick={(e) => handleNavClick(e, 'requests')}
     className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors"
   >
-    ЗАПРОСЫ ДЛЯ РАБОТЫ
+    אפשרויות לימוד
   </a>
   <a 
     href="#skills" 
     onClick={(e) => handleNavClick(e, 'skills')}
     className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors"
   >
-    УСЛУГИ
+    הצעות
   </a>
   <a 
     href="#about" 
     onClick={(e) => handleNavClick(e, 'about')}
     className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors"
   >
-    ОБО МНЕ
+    על אצמי
   </a>
   <a 
     href="#contacts" 
     onClick={(e) => handleNavClick(e, 'contacts')}
     className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white transition-colors"
   >
-    КОНТАКТЫ
+    יצירת קשר
   </a>
 </div>
 
