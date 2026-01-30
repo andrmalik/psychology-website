@@ -894,7 +894,7 @@ fill
               },
               {
                 icon: MessageCircle,
-                title: "שיעור בקבוצתי",
+                title: "שיעור קבוצתי",
                 description: "עד 4 תלמידים",
                 price: "80 ₪",
                 duration: "60 דקות"

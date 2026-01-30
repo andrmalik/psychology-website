@@ -48,25 +48,25 @@ const ContactForm = () => {
 
     // Проверка имени
     if (!formData.name.trim()) {
-      errors.name = 'Имя обязательно';
+      errors.name = 'שם הוא שדה חובה';
       isValid = false;
     } else if (formData.name.trim().length < 2) {
-      errors.name = 'Имя должно содержать минимум 2 символа';
+      errors.name = 'השם חייב להכיל לפחות 2 תווים';
       isValid = false;
     }
 
     // Проверка телефона
     if (!formData.phone.trim()) {
-      errors.phone = 'Телефон обязателен';
+      errors.phone = 'מספר טלפון הוא שדה חובה';
       isValid = false;
     } else if (formData.phone.replace(/\D/g, '').length < 11) {
-      errors.phone = 'Введите корректный номер телефона';
+      errors.phone = 'הזינו מספר טלפון תקין';
       isValid = false;
     }
 
     // Проверка согласия
     if (!formData.agreement) {
-      errors.agreement = 'Необходимо согласие на обработку данных';
+      errors.agreement = 'נדרשת הסכמה לעיבוד נתונים';
       isValid = false;
     }
 
@@ -92,7 +92,7 @@ const ContactForm = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Ошибка при отправке формы');
+        throw new Error('שגיאה בשליחת הטופס');
       }
 
       setSubmitStatus({ loading: false, success: true, error: null });
@@ -108,7 +108,7 @@ const ContactForm = () => {
       setSubmitStatus({ 
         loading: false, 
         success: false, 
-        error: 'Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.'
+        error: 'אירעה שגיאה בשליחת הטופס. אנא נסו שוב מאוחר יותר.'
       });
     }
   };
@@ -123,7 +123,7 @@ const ContactForm = () => {
             setFormData({ ...formData, name: e.target.value });
             if (formErrors.name) setFormErrors({ ...formErrors, name: '' });
           }}
-          placeholder="Имя"
+          placeholder="שם"
           className={`w-full p-6 rounded-lg border focus:outline-none focus:ring-2 focus:ring-amber-700/20 transition-all dark:bg-neutral-800 dark:text-white ${
             formErrors.name 
               ? 'border-red-300 dark:border-red-700' 
@@ -169,7 +169,7 @@ const ContactForm = () => {
             className="rounded border-neutral-300 dark:border-neutral-700 text-amber-700 focus:ring-amber-700/20"
             disabled={submitStatus.loading}
           />
-          Даю согласие на обработку персональных данных
+          אני נותן/נותנת הסכמה לעיבוד נתונים אישיים
         </label>
         {formErrors.agreement && (
           <p className="text-red-500 mt-1 text-sm">{formErrors.agreement}</p>
@@ -179,7 +179,7 @@ const ContactForm = () => {
       {submitStatus.success && (
         <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-900 rounded-lg p-4">
           <p className="text-green-800 dark:text-green-200">
-            Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
+            הבקשה נשלחה בהצלחה! ניצור איתך קשר בהקדם
           </p>
         </div>
       )}
@@ -195,7 +195,7 @@ const ContactForm = () => {
         className="w-full py-6 bg-amber-700 text-white rounded-full hover:bg-amber-800 transition-colors text-sm tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
         disabled={submitStatus.loading || !formData.agreement}
       >
-        {submitStatus.loading ? 'ОТПРАВКА...' : 'ОТПРАВИТЬ ЗАЯВКУ'}
+        {submitStatus.loading ? 'שולח...' : 'שלח בקשה'}
       </button>
     </form>
   );
