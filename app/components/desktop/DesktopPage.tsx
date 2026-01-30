@@ -653,87 +653,18 @@ fill
         </div>
         </section>
 
-
-      {/* Problems Section */}
-      <section className="relative z-20 min-h-screen flex items-end bg-[#f6f2ec] dark:bg-neutral-900 py-24"> {/* Changed items-center to items-end */}
-      <div className="max-w-7xl mx-auto px-12 mb-7"> {/* Added mb-32 */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="text-center mb-8"
-            >
-              <div className="flex items-baseline gap-4 justify-center">
-  <h2 className="text-neutral-800 dark:text-white text-5xl font-light">
-
-    Когда что-то идет не так -
-  </h2>
-  <h2 className="text-amber-700/90 text-5xl font-light font-roslindale">
-    мы справимся
-  </h2>
-</div>
-<p className="text-neutral-500 dark:text-neutral-400 mt-4">
-Проблемы, которые больше не придется решать в одиночку
-</p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 gap-8">
-            {categories.map((category, index) => (
-              <motion.div
-                key={index}
-                custom={index}
-                initial="hidden"
-                animate="visible"
-                variants={containerVariants}
-                className={`relative overflow-hidden bg-gradient-to-br ${category.gradient} ${category.darkGradient} p-8 rounded-2xl border ${category.borderColor} backdrop-blur-sm hover:shadow-lg transition-all duration-300`}
-              >
-                <motion.div 
-                  variants={titleVariants}
-                  className="flex items-center gap-4 mb-8"
-                >
-                  <div className={`p-3 rounded-xl bg-white/80 dark:bg-neutral-800/80 ${category.borderColor}`}>
-                    <category.icon size={24} className={category.iconColor} />
-                  </div>
-                  <h3 className="text-xl text-[#544B42] dark:text-white font-light">
-                    {category.title}
-                  </h3>
-                </motion.div>
-
-                <motion.div 
-                  className="space-y-4"
-                  variants={problemsContainerVariants}
-                >
-                  {category.problems.map((problem, pIndex) => (
-                    <motion.div
-                      key={pIndex}
-                      variants={problemVariants}
-                      className="overflow-hidden"
-                    >
-                      <div className="group flex items-start gap-3 p-2 rounded-lg hover:bg-white/50 dark:hover:bg-neutral-800/50 transition-all duration-300">
-                        <div className={`w-2 h-2 mt-2 rounded-full bg-opacity-30 ${category.iconColor} group-hover:scale-110 transition-all duration-300`} />
-                        <p className="text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-800 dark:group-hover:text-white transition-colors italic whitespace-nowrap">
-                          {problem}
-                        </p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
 {/* Quote Section */}
 <section className="relative z-20 bg-[#f6f2ec] dark:bg-neutral-900 py-12">
   <div className="max-w-7xl mx-auto px-12">
     <div className="flex items-center justify-between">
       <div className="w-1/2">
         <h2 className="text-4xl font-light text-neutral-800 dark:text-white">
-          Можно ли разорвать эти циклы? Найти ответы? Почувствовать себя лучше?
+          האם אפשר להוציא בבגרות ציון 90+ ולהתקבל לאוניברסיטת החלומות?
+האם אפשר להתחיל להבין מתמטיקה ולא לפחד מנוסחאות?
+האם אפשר ללמוד בלי לסבול
           <br/><br/><br/> {/* Added two extra line breaks */}
-          <span className="font-roslindale">Можно. Шаг за шагом.</span> {/* Added Roslindale but kept original color */}
-          <span className="text-amber-700/90 font-roslindale"> И я помогу.</span>
+          <span className="font-roslindale">אפשר. צעד אחר צעד.</span> {/* Added Roslindale but kept original color */}
+          <span className="text-amber-700/90 font-roslindale">  ואני אעזור.</span>
         </h2>
       </div>
       
