@@ -144,7 +144,7 @@ const ContactForm = () => {
             setFormData({ ...formData, phone: formatPhone(e.target.value) });
             if (formErrors.phone) setFormErrors({ ...formErrors, phone: '' });
           }}
-          placeholder="+7 (___) ___-__-__"
+          placeholder="+9 (___) ___-__-__"
           className={`w-full p-6 rounded-lg border focus:outline-none focus:ring-2 focus:ring-amber-700/20 transition-all dark:bg-neutral-800 dark:text-white ${
             formErrors.phone 
               ? 'border-red-300 dark:border-red-700' 

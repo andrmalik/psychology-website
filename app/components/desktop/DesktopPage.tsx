@@ -659,9 +659,9 @@ fill
     <div className="flex items-center justify-between">
       <div className="w-1/2">
         <h2 className="text-4xl font-light text-neutral-800 dark:text-white">
-          האם אפשר להוציא בבגרות ציון 90+ ולהתקבל לאוניברסיטת החלומות?
-האם אפשר להתחיל להבין מתמטיקה ולא לפחד מנוסחאות?
-האם אפשר ללמוד בלי לסבול
+    <p>האם אפשר להוציא בבגרות ציון 90+ ולהתקבל לאוניברסיטת החלומות?</p>
+    <p>האם אפשר להתחיל להבין מתמטיקה ולא לפחד מנוסחאות?</p>
+    <p>האם אפשר ללמוד בלי לסבול</p>
           <br/><br/><br/> {/* Added two extra line breaks */}
           <span className="font-roslindale">אפשר. צעד אחר צעד.</span> {/* Added Roslindale but kept original color */}
           <span className="text-amber-700/90 font-roslindale">  ואני אעזור.</span>
@@ -895,7 +895,7 @@ fill
               {
                 icon: MessageCircle,
                 title: "שיעור קבוצתי",
-                description: "עד 4 תלמידים",
+                description: " בין 3 ל4 תלמידים ",
                 price: "80 ₪",
                 duration: "60 דקות"
               },
@@ -946,8 +946,8 @@ fill
   sizes="(max-width: 768px) 85vw, 70vw"
 />
       <p className="text-neutral-600 dark:text-neutral-400 mt-6 text-lg">
-        Мы можем обсудить любой<br />
-        вопрос, который волнует вас
+        אנחנו יכולים לדון בכל <br />
+        שאלה שמעסיקה אותך
       </p>
     </div>
 
@@ -988,7 +988,7 @@ fill
               </div>
 
               {/* Tagline */}
-              <p className="text-neutral-600 dark:text-neutral-400">Место для безопасного диалога</p>
+              <p className="text-neutral-600 dark:text-neutral-400">מקום ללמידה יעילה</p>
             </div>
 
             {/* Center - Navigation links in 2 columns */}
