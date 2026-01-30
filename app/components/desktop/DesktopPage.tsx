@@ -658,10 +658,10 @@ fill
   <div className="max-w-7xl mx-auto px-12">
     <div className="flex items-center justify-between">
       <div className="w-1/2">
-        <h2 className="text-4xl font-light text-neutral-800 dark:text-white">
-    <p>האם אפשר להוציא בבגרות ציון 90+ ולהתקבל לאוניברסיטת החלומות?</p> <br/>
-    <p>האם אפשר להתחיל להבין מתמטיקה ולא לפחד מנוסחאות?</p> <br/>
-    <p>האם אפשר ללמוד בלי לסבול</p> <br/>
+        <h2 className="text-2xl font-light text-neutral-800 dark:text-white">
+    <p>?האם אפשר להוציא בבגרות ציון 90+ ולהתקבל לאוניברסיטת החלומות</p> <br/>
+    <p>?האם אפשר להתחיל להבין מתמטיקה ולא לפחד מנוסחאות</p> <br/>
+    <p>?האם אפשר ללמוד בלי לסבול</p> <br/>
           <br/><br/><br/> {/* Added two extra line breaks */}
           <span className="font-roslindale">אפשר. צעד אחר צעד.</span> {/* Added Roslindale but kept original color */}
           <span className="text-amber-700/90 font-roslindale">  ואני אעזור.</span>
